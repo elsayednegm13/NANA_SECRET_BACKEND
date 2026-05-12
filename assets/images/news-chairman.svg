@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+  <title id="title">Chairman statement placeholder image</title>
+  <desc id="desc">A clean chairman portrait placeholder for the NANA SECRET market statement.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fffaf0"/>
+      <stop offset="0.42" stop-color="#ffd400"/>
+      <stop offset="1" stop-color="#163f5c"/>
+    </linearGradient>
+    <linearGradient id="suit" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#295c80"/>
+      <stop offset="1" stop-color="#17140f"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="420" fill="url(#bg)"/>
+  <path d="M0 310c128-44 242-42 344 6 118 56 244 58 376 4v100H0z" fill="#17140f" opacity=".9"/>
+  <circle cx="360" cy="132" r="78" fill="#fff4cf"/>
+  <path d="M214 420c22-110 76-172 146-172s124 62 146 172z" fill="url(#suit)"/>
+  <path d="M314 258l46 88 46-88z" fill="#fffaf0"/>
+  <path d="M340 294l20 78 20-78z" fill="#ffd400"/>
+  <circle cx="331" cy="131" r="7" fill="#17140f"/>
+  <circle cx="389" cy="131" r="7" fill="#17140f"/>
+  <path d="M332 172c22 18 38 18 58 0" fill="none" stroke="#17140f" stroke-width="8" stroke-linecap="round"/>
+  <text x="360" y="62" text-anchor="middle" fill="#17140f" font-family="Arial, sans-serif" font-size="32" font-weight="700">NANA SECRET</text>
+  <text x="360" y="392" text-anchor="middle" fill="#ffd400" font-family="Arial, sans-serif" font-size="24" font-weight="700">Chairman Statement</text>
+</svg>

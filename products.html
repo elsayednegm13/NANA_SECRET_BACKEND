@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NANA SECRET product catalog with search, sorting, and grid or list views.">
+  <title>NANA SECRET | المنتجات</title>
+  <link rel="icon" href="assets/images/logo.webp" type="image/webp">
+  <link rel="shortcut icon" href="assets/images/logo.webp" type="image/webp">
+  <link rel="apple-touch-icon" href="assets/images/logo.webp">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="shortcut icon" href="assets/images/logo.webp" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/images/fivicon.jpg" type="image/webp">
+</head>
+<body data-page="products">
+  <a class="skip-link" href="#main" data-ar="تخطي إلى المحتوى" data-en="Skip to content">تخطي إلى المحتوى</a>
+
+  <header class="site-header" data-site-header>
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="NANA SECRET home">
+        <img src="assets/images/logo.webp" alt="NANA SECRET logo">
+        <span>NANA SECRET</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="primary-menu" aria-expanded="false" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-panel" id="primary-menu" data-nav-panel>
+        <a class="nav-link" href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+        <a class="nav-link" href="about.html" data-ar="عن الشركة" data-en="About">عن الشركة</a>
+        <a class="nav-link" href="team.html" data-ar="أعضاء الشركة" data-en="Team">أعضاء الشركة</a>
+        <a class="nav-link active" href="products.html" data-ar="المنتجات" data-en="Products">المنتجات</a>
+        <a class="nav-link" href="news.html" data-ar="الأخبار" data-en="News">الأخبار</a>
+        <a class="nav-link" href="contact.html" data-ar="التواصل" data-en="Contact">التواصل</a>
+        <a class="nav-link" href="admin.html" data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</a>
+      </div>
+      <div class="nav-actions">
+        <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language"><span data-lang-label>EN</span></button>
+        <a class="nav-cta" href="contact.html" data-ar="اطلب عرض سعر" data-en="Request quote">اطلب عرض سعر</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero products-hero" style="--hero-image: url('assets/images/product-placeholder.svg')">
+      <img src="assets/images/product-placeholder.svg" alt="NANA SECRET products">
+      <div class="page-hero-shade"></div>
+      <div class="container page-hero-content reveal">
+        <p class="eyebrow" data-ar="كتالوج المنتجات" data-en="Product catalog">كتالوج المنتجات</p>
+        <h1 data-ar="منتجات نانا سيكريت" data-en="NANA SECRET products">منتجات نانا سيكريت</h1>
+      </div>
+    </section>
+
+    <section class="section products-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker" data-ar="المنتجات" data-en="Products">المنتجات</p>
+          <h2 data-ar="ابحث وفرز واعرض المنتجات بالطريقة المناسبة" data-en="Search, sort, and display products your way">ابحث وفرز واعرض المنتجات بالطريقة المناسبة</h2>
+        </div>
+
+        <div class="products-toolbar reveal" data-products-toolbar>
+          <label class="product-search">
+            <span data-ar="بحث" data-en="Search">بحث</span>
+            <input type="search" data-product-search data-placeholder-ar="ابحث باسم المنتج أو التصنيف" data-placeholder-en="Search by product name or category" placeholder="ابحث باسم المنتج أو التصنيف">
+          </label>
+
+          <label>
+            <span data-ar="التصنيف" data-en="Category">التصنيف</span>
+            <select data-product-category>
+              <option value="all" data-ar="كل التصنيفات" data-en="All categories">كل التصنيفات</option>
+              <option value="بطاطين" data-ar="بطاطين" data-en="Blankets">بطاطين</option>
+              <option value="دفايات" data-ar="دفايات" data-en="Warmers">دفايات</option>
+              <option value="مفارش" data-ar="مفارش" data-en="Bedspreads">مفارش</option>
+              <option value="حافظات سجاد" data-ar="حافظات سجاد" data-en="Carpet covers">حافظات سجاد</option>
+              <option value="سجاد" data-ar="سجاد" data-en="Rugs">سجاد</option>
+              <option value="مخدات وخداديات" data-ar="مخدات وخداديات" data-en="Pillows and cushions">مخدات وخداديات</option>
+              <option value="أقمشة" data-ar="أقمشة" data-en="Textiles">أقمشة</option>
+              <option value="بالات" data-ar="بالات" data-en="Bales">بالات</option>
+            </select>
+          </label>
+
+          <label>
+            <span data-ar="الفرز" data-en="Sort">الفرز</span>
+            <select data-product-sort>
+              <option value="az" data-ar="من أ إلى ي" data-en="A to Z">من أ إلى ي</option>
+              <option value="za" data-ar="من ي إلى أ" data-en="Z to A">من ي إلى أ</option>
+            </select>
+          </label>
+
+          <label>
+            <span data-ar="أعمدة الشبكة" data-en="Grid columns">أعمدة الشبكة</span>
+            <select data-grid-columns>
+              <option value="3" data-ar="3 منتجات" data-en="3 products">3 منتجات</option>
+              <option value="4" selected data-ar="4 منتجات" data-en="4 products">4 منتجات</option>
+              <option value="5" data-ar="5 منتجات" data-en="5 products">5 منتجات</option>
+            </select>
+          </label>
+
+          <div class="view-toggle" role="group" aria-label="Product view">
+            <button class="is-active" type="button" data-view-mode="grid" data-ar="شبكي" data-en="Grid">شبكي</button>
+            <button type="button" data-view-mode="list" data-ar="قائمة" data-en="List">قائمة</button>
+          </div>
+        </div>
+
+        <div class="products-meta reveal">
+          <span data-product-count></span>
+          <button type="button" data-products-reset data-ar="إعادة ضبط" data-en="Reset">إعادة ضبط</button>
+        </div>
+
+        <div class="products-grid" data-products-list style="--product-columns: 4"></div>
+        <p class="products-empty" data-products-empty data-ar="لا توجد منتجات مطابقة للبحث." data-en="No products match your search.">لا توجد منتجات مطابقة للبحث.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo.webp" alt="NANA SECRET logo">
+        <p data-ar="نانا سيكريت للمفروشات والبطاطين، جودة مصرية بطموح عالمي." data-en="NANA SECRET for bedding and blankets, Egyptian quality with global ambition.">نانا سيكريت للمفروشات والبطاطين، جودة مصرية بطموح عالمي.</p>
+      </div>
+      <div>
+        <h3 data-ar="العنوان" data-en="Address">العنوان</h3>
+        <p data-ar="المنطقة الصناعية الثالثة، العاشر من رمضان، مصر" data-en="8, Al Sheriff Section, Third Industrial Area, 10th of Ramadan, Al Sharqia, Egypt">المنطقة الصناعية الثالثة، العاشر من رمضان، مصر</p>
+      </div>
+      <div>
+        <h3 data-ar="التواصل" data-en="Contact">التواصل</h3>
+        <p><a href="tel:+201033312626">+201033312626</a></p>
+        <p><a href="mailto:info@nanasecret.com.eg">info@nanasecret.com.eg</a></p>
+        <div class="socials" aria-label="Social links">
+          <a href="https://www.facebook.com/nana.secret.eg?locale=ar_AR" target="_blank" rel="noopener" aria-label="Facebook"><span>f</span></a>
+          <a href="https://wa.me/201091597606" target="_blank" rel="noopener" aria-label="WhatsApp"><span>w</span></a>
+          <a href="https://www.youtube.com/@emad565658" target="_blank" rel="noopener" aria-label="YouTube"><span>▶</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-ar="All rights reserved to © ELSAYED NEGM" data-en="All rights reserved to © ELSAYED NEGM">All rights reserved to © ELSAYED NEGM</span>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/201091597606" target="_blank" rel="noopener" aria-label="WhatsApp">W</a>
+  <button class="scroll-top" type="button" data-scroll-top aria-label="Back to top">↑</button>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/products.js"></script>
+</body>
+</html>

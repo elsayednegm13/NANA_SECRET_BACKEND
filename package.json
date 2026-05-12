@@ -1,0 +1,15 @@
+{
+  "name": "nana-secret-real-backend",
+  "version": "1.0.0",
+  "description": "NANA SECRET website with Node.js backend, SQLite database, news and products API.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7"
+  }
+}
