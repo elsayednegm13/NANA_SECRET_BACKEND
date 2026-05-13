@@ -13,7 +13,14 @@
   function escapeHtml(value) { return String(value || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;").replace(/'/g, "&#039;"); }
   function field(id) { return one("#" + id); }
   function token() { return sessionStorage.getItem(AUTH_KEY) || ""; }
-  function headers() { return { "Content-Type": "application/json", Authorization: "Bearer " + token() }; }
+  function authOnlyHeaders() { return token() ? { Authorization: "Bearer " + token() } : {}; }
+  function headers() { return Object.assign({ "Content-Type": "application/json" }, authOnlyHeaders()); }
+  function clearStaleLogin() { sessionStorage.removeItem(AUTH_KEY); }
+  async function parseError(response) {
+    var text = await response.text().catch(function () { return ""; });
+    try { var data = JSON.parse(text); return data.error || data.details || text || response.statusText; }
+    catch (error) { return text || response.statusText; }
+  }
   function setMessage(ar, en, type) {
     var message = one("[data-admin-message]");
     if (message) { message.textContent = t(ar, en); message.dataset.type = type || "info"; }
@@ -104,7 +111,7 @@
     list.innerHTML = visible.map(function (product) {
       var name = lang() === "en" ? product.en || product.ar : product.ar;
       var category = lang() === "en" ? product.categoryEn || product.categoryAr : product.categoryAr;
-      return '<article class="admin-product-card"><div class="admin-product-image"><img src="' + escapeHtml(product.imageUrl || "assets/images/product-placeholder.svg") + '" alt="' + escapeHtml(product.ar) + '"></div><div class="admin-product-info"><strong>' + escapeHtml(name) + '</strong><small>#' + escapeHtml(product.id) + '</small><span>' + escapeHtml(category) + '</span></div><div class="admin-product-actions"><button type="button" class="button secondary" data-edit-product="' + escapeHtml(product.id) + '">' + t("تعديل", "Edit") + '</button><button type="button" class="danger-button" data-delete-product="' + escapeHtml(product.id) + '">' + t("حذف", "Delete") + '</button></div></article>';
+      return '<article class="admin-product-card"><div class="admin-product-image"><img src="' + escapeHtml(product.imageUrl || "assets/images/product-placeholder.svg") + '" alt="' + escapeHtml(product.ar) + '" onerror="this.onerror=null;this.src=\'assets/images/product-placeholder.svg\';"></div><div class="admin-product-info"><strong>' + escapeHtml(name) + '</strong><small>#' + escapeHtml(product.id) + '</small><span>' + escapeHtml(category) + '</span></div><div class="admin-product-actions"><button type="button" class="button secondary" data-edit-product="' + escapeHtml(product.id) + '">' + t("تعديل", "Edit") + '</button><button type="button" class="danger-button" data-delete-product="' + escapeHtml(product.id) + '">' + t("حذف", "Delete") + '</button></div></article>';
     }).join("");
   }
   function setupForm() {
@@ -123,8 +130,8 @@
       try {
         var response = await fetch(url, { method: method, headers: headers(), body: JSON.stringify(product) });
         if (!response.ok) {
-          var errorText = await response.text();
-          throw new Error(errorText || "save failed");
+          if (response.status === 401) clearStaleLogin();
+          throw new Error(await parseError(response));
         }
         var savedProduct = await response.json();
         if (savedProduct && savedProduct.imageUrl) { currentImage = savedProduct.imageUrl; }
@@ -132,7 +139,9 @@
         resetForm();
         window.dispatchEvent(new CustomEvent("nana:products-updated"));
         setMessage("تم حفظ المنتج بنجاح وسيظهر لكل الزوار.", "Product saved successfully and will appear for all visitors.", "success");
-      } catch (error) { setMessage("تعذر حفظ المنتج. تأكد أنك مسجل دخول.", "Could not save product. Make sure you are signed in.", "error"); }
+      } catch (error) {
+        setMessage("تعذر حفظ المنتج: " + (error.message || "سجل الدخول مرة أخرى"), "Could not save product: " + (error.message || "Login again"), "error");
+      }
     });
     if (cancel) cancel.addEventListener("click", resetForm);
     if (categoryAr) categoryAr.addEventListener("change", function () { field("product-category-en").value = translateCategory(categoryAr.value); });
@@ -168,16 +177,22 @@
       }
       if (del && window.confirm(t("هل تريد حذف هذا المنتج؟", "Delete this product?"))) {
         try {
-          var response = await fetch(API_BASE + "/api/products/" + encodeURIComponent(del.dataset.deleteProduct), { method: "DELETE", headers: { Authorization: "Bearer " + token() } });
-          if (!response.ok) throw new Error("delete failed");
+          var response = await fetch(API_BASE + "/api/products/" + encodeURIComponent(del.dataset.deleteProduct), { method: "DELETE", headers: authOnlyHeaders() });
+          if (!response.ok) {
+            if (response.status === 401) clearStaleLogin();
+            throw new Error(await parseError(response));
+          }
           await loadProducts(); window.dispatchEvent(new CustomEvent("nana:products-updated")); setMessage("تم حذف المنتج.", "Product deleted.", "success");
-        } catch (error) { setMessage("تعذر حذف المنتج.", "Could not delete product.", "error"); }
+        } catch (error) {
+          setMessage("تعذر حذف المنتج: " + (error.message || "سجل الدخول مرة أخرى"), "Could not delete product: " + (error.message || "Login again"), "error");
+        }
       }
     });
   }
   function setupSearch() {
     var input = one("[data-admin-products-search]");
     if (!input) return;
+    input.addEventListener("keydown", function (event) { if (event.key === "Enter") event.preventDefault(); });
     input.addEventListener("input", function () {
       searchTerm = input.value || "";
       render();
