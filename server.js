@@ -30,6 +30,7 @@ app.use((req, res, next) => {
 });
 
 const db = new sqlite3.Database(DB_PATH);
+const sessions = new Set();
 
 function run(sql, params = []) {
   return new Promise((resolve, reject) => {
@@ -51,34 +52,6 @@ function get(sql, params = []) {
 }
 function uid(prefix) {
   return `${prefix}-${Date.now()}-${crypto.randomBytes(4).toString('hex')}`;
-}
-
-function signTokenPayload(payload) {
-  return crypto.createHmac('sha256', SESSION_SECRET).update(payload).digest('hex');
-}
-function createAdminToken(username) {
-  const payloadObject = {
-    user: String(username || ADMIN_USER).toUpperCase(),
-    iat: Date.now(),
-    nonce: crypto.randomBytes(8).toString('hex')
-  };
-  const payload = Buffer.from(JSON.stringify(payloadObject)).toString('base64url');
-  const sig = signTokenPayload(payload);
-  return `${payload}.${sig}`;
-}
-function verifyAdminToken(token) {
-  try {
-    const value = String(token || '');
-    const parts = value.split('.');
-    if (parts.length !== 2) return false;
-    const [payload, sig] = parts;
-    const expected = signTokenPayload(payload);
-    if (!crypto.timingSafeEqual(Buffer.from(sig), Buffer.from(expected))) return false;
-    const data = JSON.parse(Buffer.from(payload, 'base64url').toString('utf8'));
-    return data && String(data.user || '').toUpperCase() === ADMIN_USER.toUpperCase();
-  } catch (error) {
-    return false;
-  }
 }
 
 
@@ -162,25 +135,17 @@ async function sendContactEmail(data) {
   return result;
 }
 
-function validateDataUrlImage(dataUrl) {
-  if (!/^data:image\//i.test(String(dataUrl || ''))) return dataUrl;
-  const match = String(dataUrl).match(/^data:(image\/(png|jpe?g|webp|gif|svg\+xml));base64,(.+)$/i);
-  if (!match) throw new Error('Invalid image data');
-  const buffer = Buffer.from(match[3], 'base64');
-  if (!buffer.length || buffer.length > 5 * 1024 * 1024) {
-    throw new Error('Image must be less than 5 MB');
-  }
-  return String(dataUrl);
-}
-
 function saveDataUrlImage(dataUrl, prefix = 'image') {
   if (!/^data:image\//i.test(String(dataUrl || ''))) return dataUrl;
-  validateDataUrlImage(dataUrl);
   const match = String(dataUrl).match(/^data:(image\/(png|jpe?g|webp|gif|svg\+xml));base64,(.+)$/i);
+  if (!match) return dataUrl;
   const mime = match[1].toLowerCase();
   const extMap = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/jpg': 'jpg', 'image/webp': 'webp', 'image/gif': 'gif', 'image/svg+xml': 'svg' };
   const ext = extMap[mime] || 'png';
   const buffer = Buffer.from(match[3], 'base64');
+  if (!buffer.length || buffer.length > 5 * 1024 * 1024) {
+    throw new Error('Image must be less than 5 MB');
+  }
   const filename = `${prefix}-${Date.now()}-${crypto.randomBytes(4).toString('hex')}.${ext}`;
   const fullPath = path.join(ROOT, 'uploads', filename);
   fs.writeFileSync(fullPath, buffer);
@@ -191,14 +156,6 @@ function prepareImageInput(input = {}, prefix = 'image') {
   const output = { ...input };
   if (output.imageUrl && /^data:image\//i.test(String(output.imageUrl))) {
     output.imageUrl = saveDataUrlImage(output.imageUrl, prefix);
-  }
-  return output;
-}
-
-function prepareProductImageInput(input = {}) {
-  const output = { ...input };
-  if (output.imageUrl && /^data:image\//i.test(String(output.imageUrl))) {
-    output.imageUrl = validateDataUrlImage(output.imageUrl);
   }
   return output;
 }
@@ -279,8 +236,8 @@ async function initDb() {
 function requireAuth(req, res, next) {
   const header = req.headers.authorization || '';
   const token = header.replace(/^Bearer\s+/i, '');
-  if (!token || !verifyAdminToken(token)) {
-    return res.status(401).json({ error: 'Unauthorized. Please login again.' });
+  if (!token || !sessions.has(token)) {
+    return res.status(401).json({ error: 'Unauthorized' });
   }
   next();
 }
@@ -308,14 +265,16 @@ app.post('/api/login', (req, res) => {
   if (username.toUpperCase() !== ADMIN_USER.toUpperCase() || password !== ADMIN_PASS) {
     return res.status(401).json({ error: 'Invalid credentials' });
   }
-  const token = createAdminToken(username);
+  const token = crypto.createHmac('sha256', SESSION_SECRET)
+    .update(`${username}:${Date.now()}:${crypto.randomBytes(8).toString('hex')}`)
+    .digest('hex');
+  sessions.add(token);
   res.json({ token, user: ADMIN_USER });
 });
-app.post('/api/logout', (req, res) => {
+app.post('/api/logout', requireAuth, (req, res) => {
+  const token = (req.headers.authorization || '').replace(/^Bearer\s+/i, '');
+  sessions.delete(token);
   res.json({ ok: true });
-});
-app.get('/api/auth/check', requireAuth, (req, res) => {
-  res.json({ ok: true, user: ADMIN_USER });
 });
 app.get('/api/news', async (req, res, next) => {
   try { res.json(await all('SELECT * FROM news ORDER BY updatedAt DESC, createdAt DESC')); }
@@ -364,7 +323,7 @@ app.get('/api/products', async (req, res, next) => {
 });
 app.post('/api/products', requireAuth, async (req, res, next) => {
   try {
-    const p = normalizeProduct(prepareProductImageInput(req.body));
+    const p = normalizeProduct(prepareImageInput(req.body, 'product'));
     if (!p.ar) return res.status(400).json({ error: 'Product name is required' });
     const result = await run(`INSERT INTO products (ar, en, categoryAr, categoryEn, imageUrl, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?)`,
       [p.ar, p.en, p.categoryAr, p.categoryEn, p.imageUrl, p.createdAt, p.updatedAt]);
@@ -376,14 +335,14 @@ app.put('/api/products/:id', requireAuth, async (req, res, next) => {
   try {
     const existing = await get('SELECT * FROM products WHERE id = ?', [req.params.id]);
     if (!existing) return res.status(404).json({ error: 'Not found' });
-    const p = normalizeProduct(prepareProductImageInput(req.body), existing);
+    const p = normalizeProduct(prepareImageInput(req.body, 'product'), existing);
     await run(`UPDATE products SET ar=?, en=?, categoryAr=?, categoryEn=?, imageUrl=?, updatedAt=? WHERE id=?`,
       [p.ar, p.en, p.categoryAr, p.categoryEn, p.imageUrl, p.updatedAt, req.params.id]);
     res.json({ ...p, id: Number(req.params.id) });
   } catch (e) { next(e); }
 });
 app.delete('/api/products/:id', requireAuth, async (req, res, next) => {
-  try { const result = await run('DELETE FROM products WHERE id = ?', [req.params.id]); res.json({ ok: true, deleted: result.changes || 0 }); }
+  try { await run('DELETE FROM products WHERE id = ?', [req.params.id]); res.json({ ok: true }); }
   catch (e) { next(e); }
 });
 

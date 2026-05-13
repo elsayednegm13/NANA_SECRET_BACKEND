@@ -59,7 +59,7 @@
     list.style.setProperty("--product-columns", state.columns);
     list.innerHTML = filtered.map(function (product) {
       return '<article class="product-card">' +
-        '<div class="product-image"><img src="' + escapeHtml(product.imageUrl || "assets/images/product-placeholder.svg") + '" alt="' + escapeHtml(product.ar) + '" onerror="this.onerror=null;this.src=\'assets/images/product-placeholder.svg\';"></div>' +
+        '<div class="product-image"><img src="' + escapeHtml(product.imageUrl || "assets/images/product-placeholder.svg") + '" alt="' + escapeHtml(product.ar) + '"></div>' +
         '<div class="product-body"><h3>' + escapeHtml(state.lang === "en" ? product.en || product.ar : product.ar) + '</h3>' +
         '<p>' + escapeHtml(state.lang === "ar" ? product.categoryAr : product.categoryEn) + '</p></div>' +
       '</article>';

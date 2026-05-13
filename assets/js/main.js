@@ -274,29 +274,61 @@
   }
 
   function setupExpandableNews() {
-    var buttons = all("[data-expand-button]");
-    if (!buttons.length) {
-      return;
+    function getArticleFromButton(button) {
+      return button ? button.closest(".article-card") : null;
+    }
+
+    function getPanelFromButton(button) {
+      var article = getArticleFromButton(button);
+      return article ? one("[data-expand-panel]", article) : null;
     }
 
     function setOpen(button, panel, isOpen) {
+      if (!button || !panel) {
+        return;
+      }
       panel.classList.toggle("is-open", isOpen);
       panel.style.maxHeight = isOpen ? panel.scrollHeight + "px" : "0px";
+      button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    }
+
+    function closeOtherPanels(currentPanel) {
+      all("[data-expand-panel].is-open").forEach(function (panel) {
+        if (panel === currentPanel) {
+          return;
+        }
+        var article = panel.closest(".article-card");
+        var button = article ? one("[data-expand-button]", article) : null;
+        setOpen(button, panel, false);
+      });
+    }
+
+    function refreshPanels() {
+      all("[data-expand-button]").forEach(function (button) {
+        var panel = getPanelFromButton(button);
+        if (!panel) {
+          return;
+        }
+        setOpen(button, panel, panel.classList.contains("is-open"));
+      });
       updateExpandButtons();
     }
 
-    buttons.forEach(function (button) {
-      var article = button.closest(".article-card");
-      var panel = article ? one("[data-expand-panel]", article) : null;
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest("[data-expand-button]");
+      if (!button) {
+        return;
+      }
+
+      var panel = getPanelFromButton(button);
       if (!panel) {
         return;
       }
 
-      button.addEventListener("click", function () {
-        setOpen(button, panel, !panel.classList.contains("is-open"));
-      });
-
-      setOpen(button, panel, panel.classList.contains("is-open"));
+      var shouldOpen = !panel.classList.contains("is-open");
+      closeOtherPanels(panel);
+      setOpen(button, panel, shouldOpen);
+      updateExpandButtons();
     });
 
     window.addEventListener("resize", function () {
@@ -304,6 +336,9 @@
         panel.style.maxHeight = panel.scrollHeight + "px";
       });
     });
+
+    window.addEventListener("nana:news-rendered", refreshPanels);
+    refreshPanels();
   }
 
   function refreshGalleryCaption() {

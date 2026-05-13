@@ -172,6 +172,7 @@
         }).join(""));
       }
     }
+    window.dispatchEvent(new CustomEvent("nana:news-rendered"));
   }
   function renderLatestNews() {
     var grid = document.querySelector("[data-latest-news-list]");
