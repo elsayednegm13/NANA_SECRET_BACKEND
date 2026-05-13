@@ -412,7 +412,7 @@
       return;
     }
 
-    form.addEventListener("submit", function (event) {
+    form.addEventListener("submit", async function (event) {
       event.preventDefault();
       var fields = all("input, textarea", form);
       var valid = true;
@@ -436,13 +436,53 @@
         message.textContent = currentLang === "ar"
           ? "من فضلك أكمل البيانات المطلوبة بشكل صحيح."
           : "Please complete the required fields correctly.";
+        message.dataset.type = "error";
         return;
       }
 
-      message.textContent = currentLang === "ar"
-        ? "تم تجهيز رسالتك بنجاح. يمكنك أيضًا التواصل مباشرة عبر الهاتف أو واتساب."
-        : "Your message is ready. You can also contact us directly by phone or WhatsApp.";
-      form.reset();
+      var button = one('button[type="submit"]', form);
+      var originalText = button ? button.textContent : "";
+      if (button) {
+        button.disabled = true;
+        button.textContent = currentLang === "ar" ? "جاري الإرسال..." : "Sending...";
+      }
+      message.textContent = currentLang === "ar" ? "جاري إرسال الرسالة..." : "Sending your message...";
+      message.dataset.type = "info";
+
+      try {
+        var formData = new FormData(form);
+        var payload = {
+          name: String(formData.get("name") || "").trim(),
+          phone: String(formData.get("phone") || "").trim(),
+          email: String(formData.get("email") || "").trim(),
+          message: String(formData.get("message") || "").trim()
+        };
+        var response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        var result = await response.json().catch(function () { return {}; });
+        if (!response.ok) {
+          throw new Error(result.error || "Failed to send message");
+        }
+        message.textContent = currentLang === "ar"
+          ? "تم إرسال رسالتك بنجاح. سنقوم بالتواصل معك قريبًا."
+          : "Your message has been sent successfully. We will contact you soon.";
+        message.dataset.type = "success";
+        form.reset();
+      } catch (error) {
+        console.error(error);
+        message.textContent = currentLang === "ar"
+          ? "تعذر إرسال الرسالة الآن. من فضلك حاول لاحقًا أو تواصل عبر واتساب."
+          : "Could not send the message now. Please try again later or contact us via WhatsApp.";
+        message.dataset.type = "error";
+      } finally {
+        if (button) {
+          button.disabled = false;
+          button.textContent = originalText;
+        }
+      }
     });
   }
 
