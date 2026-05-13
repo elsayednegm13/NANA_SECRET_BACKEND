@@ -80,7 +80,7 @@
           </div>
         </div>
 
-        <form class="contact-form reveal" data-contact-form novalidate name="contact" method="POST" data-netlify="true" >
+        <form class="contact-form reveal" data-contact-form novalidate name="contact" >
           <h2 data-ar="أرسل رسالتك" data-en="Send a message">أرسل رسالتك</h2>
           <label>
             <span data-ar="الاسم" data-en="Name">الاسم</span>
@@ -131,29 +131,52 @@
     </div>
   </footer>
 <script>
-const handleSubmit = event => {
-  event.preventDefault(); // نمنع الإرسال الافتراضي مؤقتًا
+(function () {
+  var form = document.querySelector('[data-contact-form]');
+  var message = document.querySelector('[data-form-message]');
+  if (!form) return;
 
-  const myForm = event.target;
-  const formData = new FormData(myForm);
+  function setMessage(text, type) {
+    if (!message) return;
+    message.textContent = text;
+    message.dataset.type = type || 'info';
+  }
 
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString()
-  })
-    .then(() => {
-      console.log("Form successfully submitted");
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    var submit = form.querySelector('button[type="submit"]');
+    var originalText = submit ? submit.textContent : '';
+    var formData = new FormData(form);
+    var payload = Object.fromEntries(formData.entries());
 
-      // ✅ إعادة تحميل الصفحة تلقائي بعد الإرسال
-      setTimeout(() => {
-        window.location.reload();
-      }, 1000); // بعد ثانية واحدة (تقدر تغير الرقم بالمللي ثانية)
-    })
-    .catch(error => alert(error));
-};
+    if (submit) {
+      submit.disabled = true;
+      submit.textContent = document.documentElement.lang === 'en' ? 'Sending...' : 'جاري الإرسال...';
+    }
+    setMessage('', 'info');
 
-document.querySelector("form").addEventListener("submit", handleSubmit);
+    try {
+      var response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      var result = await response.json().catch(function () { return {}; });
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message');
+      }
+      form.reset();
+      setMessage(document.documentElement.lang === 'en' ? 'Your message was sent successfully.' : 'تم إرسال رسالتك بنجاح.', 'success');
+    } catch (error) {
+      setMessage(document.documentElement.lang === 'en' ? 'Could not send the message. Please try again.' : 'تعذر إرسال الرسالة. برجاء المحاولة مرة أخرى.', 'error');
+    } finally {
+      if (submit) {
+        submit.disabled = false;
+        submit.textContent = originalText;
+      }
+    }
+  });
+}());
 </script>
 
   <a class="whatsapp-float" href="https://wa.me/201091597606" target="_blank" rel="noopener" aria-label="WhatsApp">W</a>
