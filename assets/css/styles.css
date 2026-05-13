@@ -2432,3 +2432,35 @@ body.enhanced .reveal.is-visible {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* FINAL FIX: keep product admin form and grid visible after login on hosted builds */
+.products-admin-grid {
+  grid-template-columns: 1fr !important;
+  width: 100%;
+}
+.product-admin-form,
+.products-admin-grid .admin-form,
+.products-admin-grid .admin-list-panel,
+.products-admin-grid [data-admin-products-list] {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+.product-admin-form {
+  display: grid !important;
+}
+.product-admin-form select {
+  width: 100%;
+  border: 1px solid rgba(23, 20, 15, 0.16);
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--ink);
+  padding: 12px 14px;
+  outline: 0;
+}
+@media (max-width: 760px) {
+  .product-admin-form .form-grid.two {
+    grid-template-columns: 1fr !important;
+  }
+}
