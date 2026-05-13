@@ -2432,3 +2432,23 @@ body.enhanced .reveal.is-visible {
     grid-template-columns: 1fr;
   }
 }
+
+/* Final admin products visibility fix */
+.products-admin-grid,
+.products-admin-form,
+.admin-products-inline-panel,
+.admin-products-grid-list {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+.products-admin-form {
+  display: grid !important;
+}
+.admin-products-grid-list {
+  min-height: 80px;
+}
+@media (max-width: 760px) {
+  .products-admin-grid { grid-template-columns: 1fr !important; }
+  .admin-products-list-head { grid-template-columns: 1fr !important; }
+}

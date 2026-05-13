@@ -27,6 +27,7 @@
       var response = await fetch(API_BASE + "/api/products");
       if (!response.ok) throw new Error("load failed");
       products = await response.json();
+      if (!Array.isArray(products)) products = [];
       render();
     } catch (error) {
       setMessage("تعذر تحميل المنتجات. تأكد أن السيرفر يعمل.", "Could not load products. Make sure the server is running.", "error");
@@ -108,6 +109,7 @@
   }
   function setupForm() {
     var form = one("[data-product-form]");
+    if (form) { form.classList.add("is-visible"); form.style.opacity = "1"; form.style.visibility = "visible"; form.style.transform = "none"; }
     var cancel = one("[data-product-cancel]");
     var imageFile = field("product-image-file");
     var categoryAr = field("product-category-ar");
@@ -181,6 +183,10 @@
       render();
     });
   }
-  setupForm(); setupActions(); setupSearch(); resetForm(); loadProducts();
+  function forceVisible() {
+    var nodes = [one("[data-product-form]"), one("[data-admin-products-list]"), one(".admin-products-inline-panel")];
+    nodes.forEach(function (node) { if (node) { node.classList.add("is-visible"); node.style.opacity = "1"; node.style.visibility = "visible"; node.style.transform = "none"; } });
+  }
+  setupForm(); setupActions(); setupSearch(); resetForm(); forceVisible(); loadProducts();
   window.addEventListener("nana:language", render);
 })();
