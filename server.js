@@ -50,6 +50,31 @@ function get(sql, params = []) {
 function uid(prefix) {
   return `${prefix}-${Date.now()}-${crypto.randomBytes(4).toString('hex')}`;
 }
+
+function saveDataUrlImage(dataUrl, prefix = 'image') {
+  if (!/^data:image\//i.test(String(dataUrl || ''))) return dataUrl;
+  const match = String(dataUrl).match(/^data:(image\/(png|jpe?g|webp|gif|svg\+xml));base64,(.+)$/i);
+  if (!match) return dataUrl;
+  const mime = match[1].toLowerCase();
+  const extMap = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/jpg': 'jpg', 'image/webp': 'webp', 'image/gif': 'gif', 'image/svg+xml': 'svg' };
+  const ext = extMap[mime] || 'png';
+  const buffer = Buffer.from(match[3], 'base64');
+  if (!buffer.length || buffer.length > 5 * 1024 * 1024) {
+    throw new Error('Image must be less than 5 MB');
+  }
+  const filename = `${prefix}-${Date.now()}-${crypto.randomBytes(4).toString('hex')}.${ext}`;
+  const fullPath = path.join(ROOT, 'uploads', filename);
+  fs.writeFileSync(fullPath, buffer);
+  return `/uploads/${filename}`;
+}
+
+function prepareImageInput(input = {}, prefix = 'image') {
+  const output = { ...input };
+  if (output.imageUrl && /^data:image\//i.test(String(output.imageUrl))) {
+    output.imageUrl = saveDataUrlImage(output.imageUrl, prefix);
+  }
+  return output;
+}
 function normalizeNews(input = {}, existing = {}) {
   const now = new Date().toISOString();
   return {
@@ -156,7 +181,7 @@ app.get('/api/news', async (req, res, next) => {
 });
 app.post('/api/news', requireAuth, async (req, res, next) => {
   try {
-    const post = normalizeNews(req.body);
+    const post = normalizeNews(prepareImageInput(req.body, 'news'));
     if (!post.titleAr || !post.bodyAr || !post.excerptAr) return res.status(400).json({ error: 'Missing required fields' });
     await run(`INSERT INTO news (id, createdAt, updatedAt, titleAr, titleEn, authorAr, authorEn, dateAr, dateEn, excerptAr, excerptEn, bodyAr, bodyEn, imageUrl, videoUrl)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
@@ -168,7 +193,7 @@ app.put('/api/news/:id', requireAuth, async (req, res, next) => {
   try {
     const existing = await get('SELECT * FROM news WHERE id = ?', [req.params.id]);
     if (!existing) return res.status(404).json({ error: 'Not found' });
-    const post = normalizeNews({ ...req.body, id: req.params.id }, existing);
+    const post = normalizeNews(prepareImageInput({ ...req.body, id: req.params.id }, 'news'), existing);
     await run(`UPDATE news SET updatedAt=?, titleAr=?, titleEn=?, authorAr=?, authorEn=?, dateAr=?, dateEn=?, excerptAr=?, excerptEn=?, bodyAr=?, bodyEn=?, imageUrl=?, videoUrl=? WHERE id=?`,
       [post.updatedAt, post.titleAr, post.titleEn, post.authorAr, post.authorEn, post.dateAr, post.dateEn, post.excerptAr, post.excerptEn, post.bodyAr, post.bodyEn, post.imageUrl, post.videoUrl, post.id]);
     res.json(post);
@@ -183,7 +208,7 @@ app.put('/api/news/import/replace', requireAuth, async (req, res, next) => {
     const posts = Array.isArray(req.body) ? req.body : [];
     await run('DELETE FROM news');
     for (const item of posts) {
-      const post = normalizeNews(item);
+      const post = normalizeNews(prepareImageInput(item, 'news'));
       await run(`INSERT INTO news (id, createdAt, updatedAt, titleAr, titleEn, authorAr, authorEn, dateAr, dateEn, excerptAr, excerptEn, bodyAr, bodyEn, imageUrl, videoUrl)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [post.id, post.createdAt, post.updatedAt, post.titleAr, post.titleEn, post.authorAr, post.authorEn, post.dateAr, post.dateEn, post.excerptAr, post.excerptEn, post.bodyAr, post.bodyEn, post.imageUrl, post.videoUrl]);
@@ -197,7 +222,7 @@ app.get('/api/products', async (req, res, next) => {
 });
 app.post('/api/products', requireAuth, async (req, res, next) => {
   try {
-    const p = normalizeProduct(req.body);
+    const p = normalizeProduct(prepareImageInput(req.body, 'product'));
     if (!p.ar) return res.status(400).json({ error: 'Product name is required' });
     const result = await run(`INSERT INTO products (ar, en, categoryAr, categoryEn, imageUrl, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?)`,
       [p.ar, p.en, p.categoryAr, p.categoryEn, p.imageUrl, p.createdAt, p.updatedAt]);
@@ -209,7 +234,7 @@ app.put('/api/products/:id', requireAuth, async (req, res, next) => {
   try {
     const existing = await get('SELECT * FROM products WHERE id = ?', [req.params.id]);
     if (!existing) return res.status(404).json({ error: 'Not found' });
-    const p = normalizeProduct(req.body, existing);
+    const p = normalizeProduct(prepareImageInput(req.body, 'product'), existing);
     await run(`UPDATE products SET ar=?, en=?, categoryAr=?, categoryEn=?, imageUrl=?, updatedAt=? WHERE id=?`,
       [p.ar, p.en, p.categoryAr, p.categoryEn, p.imageUrl, p.updatedAt, req.params.id]);
     res.json({ ...p, id: Number(req.params.id) });

@@ -34,18 +34,22 @@
   }
   function productFromForm() {
     var categoryAr = field("product-category-ar").value;
+    var typedImageUrl = field("product-image-url").value.trim();
+    var fileInput = field("product-image-file");
+    var hasNewFile = fileInput && fileInput.files && fileInput.files.length > 0 && currentImage;
     return {
-      ar: field("product-name-ar").value,
-      en: field("product-name-en").value || field("product-name-ar").value,
+      ar: field("product-name-ar").value.trim(),
+      en: (field("product-name-en").value || field("product-name-ar").value).trim(),
       categoryAr: categoryAr,
       categoryEn: field("product-category-en").value || translateCategory(categoryAr),
-      imageUrl: currentImage || field("product-image-url").value || "assets/images/product-placeholder.svg"
+      imageUrl: hasNewFile ? currentImage : (typedImageUrl || currentImage || "assets/images/product-placeholder.svg")
     };
   }
   function resetForm() {
     var form = one("[data-product-form]");
     editingId = ""; currentImage = "";
     if (form) form.reset();
+    if (field("product-image-file")) field("product-image-file").value = "";
     if (field("product-category-en")) field("product-category-en").value = "Blankets";
     var cancel = one("[data-product-cancel]");
     var submit = one("[data-product-submit]");
@@ -55,6 +59,7 @@
   function fillForm(product) {
     editingId = product.id;
     currentImage = product.imageUrl || "";
+    if (field("product-image-file")) field("product-image-file").value = "";
     field("product-name-ar").value = product.ar || "";
     field("product-name-en").value = product.en || "";
     field("product-category-ar").value = product.categoryAr || "منتجات أخرى";
@@ -115,7 +120,12 @@
       var method = editingId ? "PUT" : "POST";
       try {
         var response = await fetch(url, { method: method, headers: headers(), body: JSON.stringify(product) });
-        if (!response.ok) throw new Error("save failed");
+        if (!response.ok) {
+          var errorText = await response.text();
+          throw new Error(errorText || "save failed");
+        }
+        var savedProduct = await response.json();
+        if (savedProduct && savedProduct.imageUrl) { currentImage = savedProduct.imageUrl; }
         await loadProducts();
         resetForm();
         window.dispatchEvent(new CustomEvent("nana:products-updated"));
@@ -126,8 +136,22 @@
     if (categoryAr) categoryAr.addEventListener("change", function () { field("product-category-en").value = translateCategory(categoryAr.value); });
     if (imageFile) imageFile.addEventListener("change", function () {
       var file = imageFile.files && imageFile.files[0]; if (!file) return;
+      if (!/^image\//i.test(file.type || "")) {
+        setMessage("اختار ملف صورة فقط.", "Choose an image file only.", "error");
+        imageFile.value = "";
+        return;
+      }
+      if (file.size > 5 * 1024 * 1024) {
+        setMessage("حجم الصورة كبير. الحد الأقصى 5 ميجا.", "Image is too large. Maximum size is 5 MB.", "error");
+        imageFile.value = "";
+        return;
+      }
       var reader = new FileReader();
-      reader.addEventListener("load", function () { currentImage = String(reader.result || ""); setMessage("تم تجهيز صورة المنتج.", "Product image is ready.", "success"); });
+      reader.addEventListener("load", function () {
+        currentImage = String(reader.result || "");
+        field("product-image-url").value = "";
+        setMessage("تم تجهيز صورة المنتج. اضغط حفظ التعديل أو إضافة المنتج.", "Product image is ready. Click save changes or add product.", "success");
+      });
       reader.readAsDataURL(file);
     });
   }
