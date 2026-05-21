@@ -3,278 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NANA SECRET admin dashboard for managing website news.">
+  <meta name="description" content="NANA SECRET dashboard">
   <title>NANA SECRET | لوحة التحكم</title>
   <link rel="icon" href="assets/images/logo.webp" type="image/webp">
-  <link rel="shortcut icon" href="assets/images/logo.webp" type="image/webp">
-  <link rel="apple-touch-icon" href="assets/images/logo.webp">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="shortcut icon" href="assets/images/logo.webp" type="image/x-icon">
-  <link rel="shortcut icon" href="assets/images/fivicon.jpg" type="image/webp">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
 </head>
-<body data-page="admin">
-  <a class="skip-link" href="#main" data-ar="تخطي إلى المحتوى" data-en="Skip to content">تخطي إلى المحتوى</a>
+<body class="dashboard-body" data-page="dashboard">
+  <main class="dashboard-shell" id="main">
+    <section class="dashboard-layout" data-dashboard>
+      <aside class="dashboard-sidebar">
+        <a class="dashboard-brand" href="admin.html"><img src="assets/images/logo.webp" alt=""><span>NANA SECRET</span></a>
+        <div class="dashboard-user">
+          <span>المستخدم المسجل</span>
+          <strong data-user-name>ADMIN</strong>
+          <small>تم الإنشاء: <b data-user-created>-</b></small>
+          <small>آخر تعديل: <b data-user-updated>-</b></small>
+        </div>
+        <nav class="dashboard-nav" data-dashboard-tabs>
+          <button class="is-active" data-tab="overview">نظرة عامة</button>
+          <button data-tab="navbar">تعديل NAVBAR</button>
+          <button data-tab="home">الصفحة الرئيسية</button>
+          <button data-tab="about">عن الشركة</button>
+          <button data-tab="team">أعضاء الشركة</button>
+          <button data-tab="products">المنتجات</button>
+          <button data-tab="news">الأخبار</button>
+          <button data-tab="contact">التواصل</button>
+          <button data-tab="users">المستخدمين</button>
+        </nav>
+        <div class="dashboard-side-actions">
+          <a class="button secondary" href="index.html" target="_blank" rel="noopener">فتح الموقع في تبويب خارجي</a>
+          <button class="danger-button" type="button" data-logout>تسجيل الخروج</button>
+        </div>
+      </aside>
 
-  <header class="site-header" data-site-header>
-    <nav class="nav container" aria-label="Primary navigation">
-      <a class="brand" href="index.html" aria-label="NANA SECRET home">
-        <img src="assets/images/logo.webp" alt="NANA SECRET logo">
-        <span>NANA SECRET</span>
-      </a>
-      <button class="menu-toggle" type="button" aria-controls="primary-menu" aria-expanded="false" data-menu-toggle>
-        <span></span><span></span><span></span>
-      </button>
-      <div class="nav-panel" id="primary-menu" data-nav-panel>
-        <a class="nav-link" href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-        <a class="nav-link" href="about.html" data-ar="عن الشركة" data-en="About">عن الشركة</a>
-        <a class="nav-link" href="team.html" data-ar="أعضاء الشركة" data-en="Team">أعضاء الشركة</a>
-        <a class="nav-link" href="products.html" data-ar="المنتجات" data-en="Products">المنتجات</a>
-        <a class="nav-link" href="news.html" data-ar="الأخبار" data-en="News">الأخبار</a>
-        <a class="nav-link" href="contact.html" data-ar="التواصل" data-en="Contact">التواصل</a>
-        <a class="nav-link active" href="admin.html" data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</a>
-      </div>
-      <div class="nav-actions">
-        <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language"><span data-lang-label>EN</span></button>
-        <a class="nav-cta" href="news.html" data-ar="عرض الأخبار" data-en="View news">عرض الأخبار</a>
-      </div>
-    </nav>
-  </header>
+      <section class="dashboard-main">
+        <header class="dashboard-topbar">
+          <div><p>لوحة التحكم</p><h1 data-panel-title>نظرة عامة</h1></div>
+          <div class="dashboard-message" data-dashboard-message></div>
+        </header>
 
-  <main id="main">
-    <section class="page-hero admin-hero" style="--hero-image: url('assets/images/event-2.jpg')">
-      <img src="assets/images/event-2.jpg" alt="NANA SECRET admin dashboard">
-      <div class="page-hero-shade"></div>
-      <div class="container page-hero-content reveal">
-        <p class="eyebrow" data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</p>
-        <h1 data-ar="إدارة أخبار نانا سيكريت" data-en="Manage NANA SECRET News">إدارة أخبار نانا سيكريت</h1>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container admin-shell">
-        <div class="admin-message" data-admin-message aria-live="polite"></div>
-
-        <section class="admin-login-card reveal" data-admin-login>
-          <div>
-            <p class="section-kicker" data-ar="تسجيل الدخول" data-en="Sign in">تسجيل الدخول</p>
-            <h2 data-ar="ادخل بيانات لوحة التحكم" data-en="Enter dashboard credentials">ادخل بيانات لوحة التحكم</h2>
-            <p data-ar="" data-en=""></p>
+        <section class="dashboard-panel is-active" data-panel="overview">
+          <div class="dashboard-stats">
+            <article><span>عدد المنتجات</span><strong data-stat-products>0</strong><small>الظاهر: <b data-stat-products-published>0</b></small></article>
+            <article><span>عدد الأخبار</span><strong data-stat-news>0</strong><small>المنشور: <b data-stat-news-published>0</b></small></article>
+            <article><span>عدد المستخدمين</span><strong data-stat-users>0</strong></article>
+            <article><span>عدد صور الاحتفالية</span><strong data-stat-gallery>0</strong><small>الظاهر: <b data-stat-gallery-published>0</b></small></article>
           </div>
-          <form class="admin-form compact" data-login-form>
-            <label>
-              <span data-ar="اسم المستخدم" data-en="Username">اسم المستخدم</span>
-              <input id="admin-username" type="text" autocomplete="username" required data-placeholder-ar="username" data-placeholder-en="username" placeholder="username">
-            </label>
-            <label>
-              <span data-ar="كلمة المرور" data-en="Password">كلمة المرور</span>
-              <input id="admin-password" type="password" autocomplete="current-password" required data-placeholder-ar="password" data-placeholder-en="password" placeholder="password">
-            </label>
-            <button class="button primary" type="submit" data-ar="دخول" data-en="Sign in">دخول</button>
-          </form>
+          <div class="dashboard-card visual-card"><h2>Line Charts</h2><div class="line-charts"><div class="line-chart" data-line-chart><span>المنتجات</span><svg viewBox="0 0 220 90" preserveAspectRatio="none"><polyline data-line-products points="0,80 60,60 120,40 220,20"></polyline></svg></div><div class="line-chart" data-line-chart><span>الأخبار</span><svg viewBox="0 0 220 90" preserveAspectRatio="none"><polyline data-line-news points="0,80 60,60 120,40 220,20"></polyline></svg></div><div class="line-chart" data-line-chart><span>صور الاحتفالية</span><svg viewBox="0 0 220 90" preserveAspectRatio="none"><polyline data-line-gallery points="0,80 60,60 120,40 220,20"></polyline></svg></div></div></div>
+          <details class="dashboard-card users-dropdown"><summary>المستخدمين المسجلين <b data-users-dropdown-count>0</b></summary><div class="users-overview" data-users-overview>جاري التحميل...</div></details>
         </section>
 
-        <section class="admin-panel" data-admin-panel hidden>
-          <div class="admin-toolbar reveal">
-            <div>
-              <p class="section-kicker" data-ar="إدارة المحتوى" data-en="Content management">إدارة المحتوى</p>
-              <h2 data-ar="إضافة وتعديل وحذف الأخبار" data-en="Add, edit, and delete stories">إضافة وتعديل وحذف الأخبار</h2>
-              <p data-news-count>عدد الأخبار المضافة: 0</p>
-            </div>
-            <div class="admin-toolbar-actions">
-              <button class="button secondary" type="button" data-export-news data-ar="تصدير الأخبار" data-en="Export news">تصدير الأخبار</button>
-              <label class="import-button">
-                <span data-ar="استيراد الأخبار" data-en="Import news">استيراد الأخبار</span>
-                <input type="file" accept="application/json" data-import-news>
-              </label>
-              <button class="danger-button" type="button" data-admin-logout data-ar="خروج" data-en="Sign out">خروج</button>
-            </div>
-          </div>
-
-          <div class="admin-grid">
-            <form class="admin-form reveal" data-news-form>
-              <div class="admin-form-heading">
-                <h3 data-ar="بيانات الخبر" data-en="Story details">بيانات الخبر</h3>
-                <button class="text-link admin-cancel" type="button" data-news-cancel hidden data-ar="إلغاء التعديل" data-en="Cancel edit">إلغاء التعديل</button>
-              </div>
-
-              <div class="form-grid two">
-                <label>
-                  <span data-ar="العنوان بالعربي" data-en="Arabic title">العنوان بالعربي</span>
-                  <input id="news-title-ar" type="text" required data-placeholder-ar="اكتب عنوان الخبر" data-placeholder-en="Arabic story title" placeholder="اكتب عنوان الخبر">
-                </label>
-                <label>
-                  <span data-ar="العنوان بالإنجليزي" data-en="English title">العنوان بالإنجليزي</span>
-                  <input id="news-title-en" type="text" data-placeholder-ar="English title" data-placeholder-en="English title" placeholder="English title">
-                </label>
-                <label>
-                  <span data-ar="الكاتب بالعربي" data-en="Arabic author">الكاتب بالعربي</span>
-                  <input id="news-author-ar" type="text" required value="من الإدارة">
-                </label>
-                <label>
-                  <span data-ar="الكاتب بالإنجليزي" data-en="English author">الكاتب بالإنجليزي</span>
-                  <input id="news-author-en" type="text" value="From Management">
-                </label>
-                <label>
-                  <span data-ar="التاريخ بالعربي" data-en="Arabic date">التاريخ بالعربي</span>
-                  <input id="news-date-ar" type="text" required data-placeholder-ar="٢١ يناير ٢٠٢٦" data-placeholder-en="٢١ يناير ٢٠٢٦" placeholder="٢١ يناير ٢٠٢٦">
-                </label>
-                <label>
-                  <span data-ar="التاريخ بالإنجليزي" data-en="English date">التاريخ بالإنجليزي</span>
-                  <input id="news-date-en" type="text" data-placeholder-ar="January 21, 2026" data-placeholder-en="January 21, 2026" placeholder="January 21, 2026">
-                </label>
-              </div>
-
-              <label>
-                <span data-ar="ملخص الخبر بالعربي" data-en="Arabic excerpt">ملخص الخبر بالعربي</span>
-                <textarea id="news-excerpt-ar" rows="3" required data-placeholder-ar="اكتب ملخص قصير يظهر قبل التفاصيل" data-placeholder-en="Write a short Arabic excerpt" placeholder="اكتب ملخص قصير يظهر قبل التفاصيل"></textarea>
-              </label>
-              <label>
-                <span data-ar="ملخص الخبر بالإنجليزي" data-en="English excerpt">ملخص الخبر بالإنجليزي</span>
-                <textarea id="news-excerpt-en" rows="3" data-placeholder-ar="Write an English excerpt" data-placeholder-en="Write an English excerpt" placeholder="Write an English excerpt"></textarea>
-              </label>
-              <label>
-                <span data-ar="تفاصيل الخبر بالعربي" data-en="Arabic body">تفاصيل الخبر بالعربي</span>
-                <textarea id="news-body-ar" rows="8" required data-placeholder-ar="اكتب التفاصيل. كل سطر جديد يظهر كفقرة." data-placeholder-en="Write Arabic details. Each new line becomes a paragraph." placeholder="اكتب التفاصيل. كل سطر جديد يظهر كفقرة."></textarea>
-              </label>
-              <label>
-                <span data-ar="تفاصيل الخبر بالإنجليزي" data-en="English body">تفاصيل الخبر بالإنجليزي</span>
-                <textarea id="news-body-en" rows="8" data-placeholder-ar="Write English details. Each new line becomes a paragraph." data-placeholder-en="Write English details. Each new line becomes a paragraph." placeholder="Write English details. Each new line becomes a paragraph."></textarea>
-              </label>
-
-              <div class="form-grid two">
-                <label>
-                  <span data-ar="رابط الصورة" data-en="Image URL">رابط الصورة</span>
-                  <input id="news-image-url" type="url" data-placeholder-ar="اتركه فارغًا للصورة الافتراضية" data-placeholder-en="Leave empty for default image" placeholder="اتركه فارغًا للصورة الافتراضية">
-                </label>
-                <label>
-                  <span data-ar="رفع صورة من الجهاز" data-en="Upload image">رفع صورة من الجهاز</span>
-                  <input id="news-image-file" type="file" accept="image/*">
-                </label>
-              </div>
-
-              <label>
-                <span data-ar="رابط فيديو اختياري" data-en="Optional video link">رابط فيديو اختياري</span>
-                <input id="news-video-url" type="url" data-placeholder-ar="مثال: رابط فيديو فيسبوك" data-placeholder-en="Example: Facebook video link" placeholder="مثال: رابط فيديو فيسبوك">
-              </label>
-
-              <div class="admin-preview-card">
-                <img src="assets/images/news-chairman.svg" alt="News image preview" data-image-preview>
-                <p data-ar="معاينة صورة الخبر" data-en="Story image preview">معاينة صورة الخبر</p>
-              </div>
-
-              <button class="button primary" type="submit" data-news-submit>نشر الخبر</button>
-            </form>
-
-            <aside class="admin-list-panel reveal">
-              <h3 data-ar="الأخبار المضافة" data-en="Added stories">الأخبار المضافة</h3>
-              <div class="admin-news-list" data-admin-news-list></div>
-            </aside>
-          </div>
-
-          <div class="admin-toolbar is-visible" style="margin-top:32px">
-            <div>
-              <p class="section-kicker" data-ar="إدارة المنتجات" data-en="Products management">إدارة المنتجات</p>
-              <h2 data-ar="إضافة وتعديل وحذف المنتجات" data-en="Add, edit, and delete products">إضافة وتعديل وحذف المنتجات</h2>
-              <p data-products-admin-count>عدد المنتجات: 0</p>
-            </div>
-          </div>
-
-          <div class="admin-grid products-admin-grid">
-            <form class="admin-form products-admin-form is-visible" data-product-form>
-              <div class="admin-form-heading">
-                <h3 data-ar="بيانات المنتج" data-en="Product details">بيانات المنتج</h3>
-                <button class="text-link admin-cancel" type="button" data-product-cancel hidden data-ar="إلغاء التعديل" data-en="Cancel edit">إلغاء التعديل</button>
-              </div>
-              <div class="form-grid two">
-                <label>
-                  <span data-ar="اسم المنتج بالعربي" data-en="Arabic product name">اسم المنتج بالعربي</span>
-                  <input id="product-name-ar" type="text" required placeholder="اسم المنتج">
-                </label>
-                <label>
-                  <span data-ar="اسم المنتج بالإنجليزي" data-en="English product name">اسم المنتج بالإنجليزي</span>
-                  <input id="product-name-en" type="text" placeholder="English name">
-                </label>
-                <label>
-                  <span data-ar="التصنيف بالعربي" data-en="Arabic category">التصنيف بالعربي</span>
-                  <select id="product-category-ar" required>
-                    <option value="بطاطين">بطاطين</option>
-                    <option value="دفايات">دفايات</option>
-                    <option value="مفارش">مفارش</option>
-                    <option value="حافظات سجاد">حافظات سجاد</option>
-                    <option value="سجاد">سجاد</option>
-                    <option value="مخدات وخداديات">مخدات وخداديات</option>
-                    <option value="أقمشة">أقمشة</option>
-                    <option value="بالات">بالات</option>
-                    <option value="منتجات أخرى">منتجات أخرى</option>
-                  </select>
-                </label>
-                <label>
-                  <span data-ar="التصنيف بالإنجليزي" data-en="English category">التصنيف بالإنجليزي</span>
-                  <input id="product-category-en" type="text" value="Blankets">
-                </label>
-                <label>
-                  <span data-ar="رابط صورة المنتج" data-en="Product image URL">رابط صورة المنتج</span>
-                  <input id="product-image-url" type="text" placeholder="assets/images/product-placeholder.svg">
-                </label>
-                <label>
-                  <span data-ar="رفع صورة من الجهاز" data-en="Upload image">رفع صورة من الجهاز</span>
-                  <input id="product-image-file" type="file" accept="image/*">
-                </label>
-              </div>
-              <button class="button primary" type="submit" data-product-submit>إضافة المنتج</button>
-
-              <div class="admin-list-panel admin-products-inline-panel" style="position:relative;top:auto;opacity:1;transform:none;margin-top:18px">
-                <div class="admin-products-list-head">
-                  <div>
-                    <h3 data-ar="المنتجات الموجودة" data-en="Current products">المنتجات الموجودة</h3>
-                    <p data-ar="ابحث بسرعة ثم عدّل أو احذف أي منتج." data-en="Search quickly, then edit or delete any product.">ابحث بسرعة ثم عدّل أو احذف أي منتج.</p>
-                  </div>
-                  <label class="admin-product-search">
-                    <span data-ar="بحث سريع" data-en="Quick search">بحث سريع</span>
-                    <input type="search" data-admin-products-search placeholder="ابحث باسم المنتج أو التصنيف أو رقم المنتج" data-placeholder-ar="ابحث باسم المنتج أو التصنيف أو رقم المنتج" data-placeholder-en="Search by product name, category, or ID">
-                  </label>
-                </div>
-                <div class="admin-products-grid-list" data-admin-products-list></div>
-              </div>
-            </form>
-          </div>
-
-        </section>
-      </div>
+        <section class="dashboard-panel" data-panel="navbar"><div data-content-editor="navbar"></div></section>
+        <section class="dashboard-panel" data-panel="home"><div data-content-editor="home"></div></section>
+        <section class="dashboard-panel" data-panel="about"><div data-content-editor="about"></div></section>
+        <section class="dashboard-panel" data-panel="team"><div data-content-editor="team"></div></section>
+        <section class="dashboard-panel" data-panel="products"><div data-products-section></div></section>
+        <section class="dashboard-panel" data-panel="news"><div data-news-section></div></section>
+        <section class="dashboard-panel" data-panel="contact"><div data-content-editor="contact"></div></section>
+        <section class="dashboard-panel" data-panel="users"><div data-users-manager></div></section>
+      </section>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <img src="assets/images/logo.webp" alt="NANA SECRET logo">
-        <p data-ar="نانا سيكريت للمفروشات والبطاطين، جودة مصرية بطموح عالمي." data-en="NANA SECRET for bedding and blankets, Egyptian quality with global ambition.">نانا سيكريت للمفروشات والبطاطين، جودة مصرية بطموح عالمي.</p>
-      </div>
-      <div>
-        <h3 data-ar="العنوان" data-en="Address">العنوان</h3>
-        <p data-ar="المنطقة الصناعية الثالثة، العاشر من رمضان، مصر" data-en="8, Al Sheriff Section, Third Industrial Area, 10th of Ramadan, Al Sharqia, Egypt">المنطقة الصناعية الثالثة، العاشر من رمضان، مصر</p>
-      </div>
-      <div>
-        <h3 data-ar="التواصل" data-en="Contact">التواصل</h3>
-        <p><a href="tel:+201033312626">+201033312626</a></p>
-        <p><a href="mailto:info@nanasecret.com.eg">info@nanasecret.com.eg</a></p>
-        <div class="socials" aria-label="Social links">
-          <a href="https://www.facebook.com/nana.secret.eg?locale=ar_AR" target="_blank" rel="noopener" aria-label="Facebook"><span>f</span></a>
-          <a href="https://wa.me/201091597606" target="_blank" rel="noopener" aria-label="WhatsApp"><span>w</span></a>
-          <a href="https://www.youtube.com/@emad565658" target="_blank" rel="noopener" aria-label="YouTube"><span>▶</span></a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span data-ar="All rights reserved to © ELSAYED NEGM" data-en="All rights reserved to © ELSAYED NEGM">All rights reserved to © ELSAYED NEGM</span>
-    </div>
-  </footer>
-
-  <a class="whatsapp-float" href="https://wa.me/201091597606" target="_blank" rel="noopener" aria-label="WhatsApp">W</a>
-  <button class="scroll-top" type="button" data-scroll-top aria-label="Back to top">↑</button>
-  <script src="assets/js/news-store.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/admin.js"></script>
-  <script src="assets/js/admin-products.js"></script>
+  <script src="assets/js/dashboard.js"></script>
 </body>
 </html>

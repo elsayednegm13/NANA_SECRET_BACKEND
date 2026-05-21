@@ -4,6 +4,11 @@
   var API_BASE = window.NANA_API_BASE || (window.location.protocol === "file:" ? "http://localhost:4000" : "");
   var AUTH_KEY = "nana-secret-admin-token";
   var DEFAULT_IMAGE = "assets/images/news-chairman.svg";
+  var FALLBACK_NEWS_IMAGES = ["assets/images/event-1.jpg", "assets/images/event-2.jpg", "assets/images/news-chairman.svg"];
+  function newsImage(post, index) {
+    var src = String((post && post.imageUrl) || "").trim();
+    return src || FALLBACK_NEWS_IMAGES[index % FALLBACK_NEWS_IMAGES.length] || DEFAULT_IMAGE;
+  }
   var ADMIN_USER = "ADMIN";
   var ADMIN_PASS = "123";
   var cache = [];
@@ -42,14 +47,18 @@
       bodyAr: String(source.bodyAr || "").trim(),
       bodyEn: String(source.bodyEn || source.bodyAr || "").trim(),
       imageUrl: String(source.imageUrl || DEFAULT_IMAGE).trim(),
-      videoUrl: String(source.videoUrl || "").trim()
+      videoUrl: String(source.videoUrl || "").trim(),
+      isPublished: Number(source.isPublished) === 0 ? 0 : 1
     };
   }
   function sortPosts(posts) {
     return (posts || []).filter(function (post) {
-      return post && post.id && post.titleAr;
+      return post && post.id && post.titleAr && Number(post.isPublished) !== 0;
     }).sort(function (a, b) {
-      return String(b.updatedAt || b.createdAt || "").localeCompare(String(a.updatedAt || a.createdAt || ""));
+      var ao = Number(a.sortOrder || 0);
+      var bo = Number(b.sortOrder || 0);
+      if (ao || bo) return (ao || 999999) - (bo || 999999);
+      return String(a.createdAt || a.updatedAt || "").localeCompare(String(b.createdAt || b.updatedAt || ""));
     });
   }
   function getPosts() { return cache.slice(); }
@@ -138,7 +147,7 @@
     }
     return '' +
       '<article class="article-card news-article is-visible" id="' + id + '" data-custom-news>' +
-        '<div class="article-cover"><img src="' + escapeHtml(post.imageUrl || DEFAULT_IMAGE) + '" alt="' + escapeHtml(post.titleEn || post.titleAr) + '" loading="lazy"></div>' +
+        '<div class="article-cover"><img src="' + escapeHtml(newsImage(post, 0)) + '" alt="' + escapeHtml(post.titleEn || post.titleAr) + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + DEFAULT_IMAGE + '\';"></div>' +
         '<p class="meta" data-ar="' + escapeHtml(metaText(post, "ar")) + '" data-en="' + escapeHtml(metaText(post, "en")) + '">' + escapeHtml(metaText(post, "ar")) + '</p>' +
         '<h2 data-ar="' + escapeHtml(post.titleAr) + '" data-en="' + escapeHtml(post.titleEn || post.titleAr) + '">' + escapeHtml(post.titleAr) + '</h2>' +
         '<p data-ar="' + escapeHtml(post.excerptAr) + '" data-en="' + escapeHtml(post.excerptEn || post.excerptAr) + '">' + escapeHtml(post.excerptAr) + '</p>' +
@@ -146,10 +155,10 @@
         '<div class="news-detail" data-expand-panel>' + bodyMarkup(post) + '</div>' +
       '</article>';
   }
-  function latestCardMarkup(post) {
+  function latestCardMarkup(post, index) {
     return '' +
       '<article class="latest-news-card is-visible" data-custom-latest-news>' +
-        '<img src="' + escapeHtml(post.imageUrl || DEFAULT_IMAGE) + '" alt="' + escapeHtml(post.titleEn || post.titleAr) + '" loading="lazy">' +
+        '<img src="' + escapeHtml(newsImage(post, index || 0)) + '" alt="' + escapeHtml(post.titleEn || post.titleAr) + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + DEFAULT_IMAGE + '\';">' +
         '<div><p class="meta" data-ar="' + escapeHtml(metaText(post, "ar")) + '" data-en="' + escapeHtml(metaText(post, "en")) + '">' + escapeHtml(metaText(post, "ar")) + '</p>' +
         '<h3 data-ar="' + escapeHtml(post.titleAr) + '" data-en="' + escapeHtml(post.titleEn || post.titleAr) + '">' + escapeHtml(post.titleAr) + '</h3>' +
         '<p data-ar="' + escapeHtml(post.excerptAr) + '" data-en="' + escapeHtml(post.excerptEn || post.excerptAr) + '">' + escapeHtml(post.excerptAr) + '</p>' +
@@ -161,15 +170,20 @@
     var aside = document.querySelector("[data-news-aside]");
     var posts = getPosts();
     if (list) {
-      Array.prototype.slice.call(list.querySelectorAll("[data-custom-news]")).forEach(function (item) { item.remove(); });
-      if (posts.length) list.insertAdjacentHTML("afterbegin", posts.map(articleMarkup).join(""));
+      // صفحة الأخبار تعرض الآن الأخبار القادمة من لوحة التحكم فقط.
+      // هذا يمنع بقاء الأخبار القديمة الثابتة بعد الحذف أو الإخفاء من الداشبورد.
+      list.innerHTML = posts.length ? posts.map(articleMarkup).join("") : '<article class="article-card news-article is-visible"><h2 data-ar="لا توجد أخبار منشورة" data-en="No published news">لا توجد أخبار منشورة</h2></article>';
     }
     if (aside) {
-      Array.prototype.slice.call(aside.querySelectorAll("[data-custom-news-link]")).forEach(function (item) { item.remove(); });
+      var keepTitle = aside.querySelector("h3");
+      aside.innerHTML = "";
+      if (keepTitle) aside.appendChild(keepTitle);
       if (posts.length) {
-        aside.insertAdjacentHTML("afterbegin", posts.slice(0, 5).map(function (post) {
+        aside.insertAdjacentHTML("beforeend", posts.slice(0, 5).map(function (post) {
           return '<a href="#' + escapeHtml(post.id) + '" data-custom-news-link data-ar="' + escapeHtml(post.titleAr) + '" data-en="' + escapeHtml(post.titleEn || post.titleAr) + '">' + escapeHtml(post.titleAr) + '</a>';
         }).join(""));
+      } else {
+        aside.insertAdjacentHTML("beforeend", '<span data-ar="لا توجد أخبار" data-en="No news">لا توجد أخبار</span>');
       }
     }
     window.dispatchEvent(new CustomEvent("nana:news-rendered"));
@@ -178,10 +192,52 @@
     var grid = document.querySelector("[data-latest-news-list]");
     var posts = getPosts().slice(0, 3);
     if (!grid) return;
-    Array.prototype.slice.call(grid.querySelectorAll("[data-custom-latest-news]")).forEach(function (item) { item.remove(); });
-    if (posts.length) grid.insertAdjacentHTML("afterbegin", posts.map(latestCardMarkup).join(""));
+    grid.innerHTML = posts.length ? posts.map(function(post, index){ return latestCardMarkup(post, index); }).join("") : '<p data-ar="لا توجد أخبار منشورة" data-en="No published news">لا توجد أخبار منشورة</p>';
   }
 
+
+
+  var DEFAULT_GALLERY = [
+    { id: "event-1", imageUrl: "assets/images/event-1.jpg", captionAr: "وضع حجر الأساس لمجمع نانا سيكريت", captionEn: "Foundation stone for NANA SECRET Complex", displayMode: "grid", isPublished: 1 },
+    { id: "event-2", imageUrl: "assets/images/event-2.jpg", captionAr: "كلمة خلال فعاليات الاحتفال", captionEn: "Speech during the celebration", displayMode: "grid", isPublished: 1 },
+    { id: "event-3", imageUrl: "assets/images/event-3.jpg", captionAr: "عرض تقديمي لهوية نانا سيكريت", captionEn: "NANA SECRET identity presentation", displayMode: "grid", isPublished: 1 },
+    { id: "event-4", imageUrl: "assets/images/event-4.jpg", captionAr: "لقاء الضيوف والشركاء", captionEn: "Guests and partners gathering", displayMode: "grid", isPublished: 1 },
+    { id: "event-5", imageUrl: "assets/images/event-5.jpg", captionAr: "لحظة وضع حجر الأساس", captionEn: "Foundation stone moment", displayMode: "grid", isPublished: 1 },
+    { id: "event-6", imageUrl: "assets/images/event-6.jpg", captionAr: "حضور من قادة الصناعة", captionEn: "Industry leaders attendance", displayMode: "grid", isPublished: 1 },
+    { id: "event-7", imageUrl: "assets/images/event-7.jpg", captionAr: "مشاركة الشركاء في الاحتفالية", captionEn: "Partners participating in the event", displayMode: "grid", isPublished: 1 },
+    { id: "event-8", imageUrl: "assets/images/event-8.jpg", captionAr: "استقبال الزوار داخل موقع الاحتفال", captionEn: "Welcoming visitors at the event site", displayMode: "grid", isPublished: 1 },
+    { id: "event-9", imageUrl: "assets/images/event-9.jpg", captionAr: "صورة جماعية للضيوف", captionEn: "Group photo of guests", displayMode: "grid", isPublished: 1 }
+  ];
+  var galleryCache = [];
+  function galleryItemMarkup(item) {
+    var mode = item.displayMode === "wide" ? "wide" : "grid";
+    return '<button class="gallery-item reveal is-' + mode + '" type="button" data-src="' + escapeHtml(item.imageUrl) + '" data-caption-ar="' + escapeHtml(item.captionAr || '') + '" data-caption-en="' + escapeHtml(item.captionEn || item.captionAr || '') + '"><img src="' + escapeHtml(item.imageUrl) + '" alt="' + escapeHtml(item.captionEn || item.captionAr || 'NANA SECRET gallery image') + '" loading="lazy"></button>';
+  }
+  function renderGallery() {
+    var gallery = document.querySelector('[data-gallery]');
+    if (!gallery) return;
+    gallery.innerHTML = galleryCache.length ? galleryCache.map(galleryItemMarkup).join('') : '<p data-ar="لا توجد صور احتفالية منشورة" data-en="No published ceremony photos">لا توجد صور احتفالية منشورة</p>';
+    Array.prototype.slice.call(gallery.querySelectorAll('.reveal')).forEach(function(el){ el.classList.add('is-visible'); });
+    if (window.NanaMain && typeof window.NanaMain.initGallery === 'function') {
+      window.NanaMain.initGallery();
+    } else {
+      window.dispatchEvent(new CustomEvent('nana:gallery-rendered'));
+    }
+  }
+  async function fetchGallery() {
+    var response = await fetch(API_BASE + '/api/gallery');
+    if (!response.ok) throw new Error('Cannot load gallery');
+    galleryCache = await response.json();
+    if (!Array.isArray(galleryCache)) { galleryCache = []; }
+    galleryCache = galleryCache.filter(function(item){ return item && item.id && item.imageUrl && Number(item.isPublished) !== 0; }).sort(function(a,b){
+      var ao = Number(a.sortOrder || 0);
+      var bo = Number(b.sortOrder || 0);
+      if (ao || bo) return (ao || 999999) - (bo || 999999);
+      return String(a.createdAt || '').localeCompare(String(b.createdAt || ''));
+    });
+    renderGallery();
+    return galleryCache.slice();
+  }
   window.NanaNews = {
     adminPass: ADMIN_PASS,
     adminUser: ADMIN_USER,
@@ -196,11 +252,14 @@
     replacePosts: replacePosts,
     upsertPost: upsertPost,
     renderLatestNews: renderLatestNews,
-    renderNewsPage: renderNewsPage
+    renderNewsPage: renderNewsPage,
+    fetchGallery: fetchGallery,
+    renderGallery: renderGallery
   };
 
   fetchPosts().catch(function () {
-    renderNewsPage();
-    renderLatestNews();
+    // لو السيرفر غير متاح لا نمسح الأخبار الثابتة المعروضة في الصفحة.
+    if (cache.length) { renderNewsPage(); renderLatestNews(); }
   });
+  fetchGallery().catch(function () { galleryCache = DEFAULT_GALLERY.slice(); renderGallery(); });
 })();

@@ -403,9 +403,7 @@
     }
 
     galleryState.items.forEach(function (item, index) {
-      item.addEventListener("click", function () {
-        openModal(index);
-      });
+      item.onclick = function () { openModal(index); };
     });
 
     closeButtons.forEach(function (button) {
@@ -544,6 +542,14 @@
       element.textContent = new Date().getFullYear();
     });
   }
+
+
+  window.addEventListener("nana:gallery-rendered", function(){
+    all(".gallery-grid .reveal").forEach(function(item){ item.classList.add("is-visible"); });
+    setupGallery();
+  });
+
+  window.NanaMain = { initGallery: setupGallery, refreshGalleryCaption: refreshGalleryCaption };
 
   setupYear();
   setupHeader();
