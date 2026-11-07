@@ -1,0 +1,1834 @@
+[
+  {
+    "id": 1,
+    "ar": "بطانيه نيو روكسانا",
+    "en": "بطانيه نيو روكسانا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 2,
+    "ar": "بطانيه نيو مونتانا",
+    "en": "بطانيه نيو مونتانا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 3,
+    "ar": "دفايه سنبله",
+    "en": "دفايه سنبله",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 4,
+    "ar": "دفايه لوتس",
+    "en": "دفايه لوتس",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 5,
+    "ar": "دفايه باندا",
+    "en": "دفايه باندا",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 6,
+    "ar": "بطانيه نيو روتانا",
+    "en": "بطانيه نيو روتانا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 7,
+    "ar": "بطانيه نيو بونيتا",
+    "en": "بطانيه نيو بونيتا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 8,
+    "ar": "بطانيه نيو دريمز",
+    "en": "بطانيه نيو دريمز",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 9,
+    "ar": "بطانيه نيو بيبي دبل",
+    "en": "بطانيه نيو بيبي دبل",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 10,
+    "ar": "بطانيه نيو هارموني",
+    "en": "بطانيه نيو هارموني",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 11,
+    "ar": "بطانيه نيو هافانا",
+    "en": "بطانيه نيو هافانا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 12,
+    "ar": "دفايه روبي",
+    "en": "دفايه روبي",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 13,
+    "ar": "بطانيه نيو ريفانا",
+    "en": "بطانيه نيو ريفانا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 14,
+    "ar": "بطانيه نيو البارون",
+    "en": "بطانيه نيو البارون",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 15,
+    "ar": "بطانيه نيو كمفورت",
+    "en": "بطانيه نيو كمفورت",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 16,
+    "ar": "بطانيه نيو لورين",
+    "en": "بطانيه نيو لورين",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 17,
+    "ar": "بطانيه نيو بيانكا",
+    "en": "بطانيه نيو بيانكا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 18,
+    "ar": "بطانيه نيو ريماس",
+    "en": "بطانيه نيو ريماس",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 19,
+    "ar": "بطانيه نيو الماسه",
+    "en": "بطانيه نيو الماسه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 20,
+    "ar": "بطانيه تركي",
+    "en": "بطانيه تركي",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 21,
+    "ar": "بطانيه سيرينا",
+    "en": "بطانيه سيرينا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 22,
+    "ar": "بطانيه نيو جراند",
+    "en": "بطانيه نيو جراند",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 23,
+    "ar": "مفرش ساده نيو 1 قطعه",
+    "en": "مفرش ساده نيو 1 قطعه",
+    "categoryAr": "مفارش",
+    "categoryEn": "Bedspreads",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 24,
+    "ar": "حافظه سجاد ايفوريا 2*3 درجه ثانيه",
+    "en": "حافظه سجاد ايفوريا 2*3 درجه ثانيه",
+    "categoryAr": "حافظات سجاد",
+    "categoryEn": "Carpet covers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 25,
+    "ar": "سجاده النور - 1",
+    "en": "سجاده النور - 1",
+    "categoryAr": "سجاد",
+    "categoryEn": "Rugs",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 26,
+    "ar": "بطانيه نيو سولينا جامبو",
+    "en": "بطانيه نيو سولينا جامبو",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 27,
+    "ar": "حافظه سجاد فيكتوريا سيكريت",
+    "en": "حافظه سجاد فيكتوريا سيكريت",
+    "categoryAr": "حافظات سجاد",
+    "categoryEn": "Carpet covers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 28,
+    "ar": "دفايه كناريا",
+    "en": "دفايه كناريا",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 29,
+    "ar": "مفرش اطفال نيو 2 قطعه",
+    "en": "مفرش اطفال نيو 2 قطعه",
+    "categoryAr": "مفارش",
+    "categoryEn": "Bedspreads",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 30,
+    "ar": "بطانيه برونز",
+    "en": "بطانيه برونز",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 31,
+    "ar": "بطانيه نيو كمبنسكي",
+    "en": "بطانيه نيو كمبنسكي",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 32,
+    "ar": "دفايه هاي سيندا",
+    "en": "دفايه هاي سيندا",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 33,
+    "ar": "بطانيه نيو ميراج",
+    "en": "بطانيه نيو ميراج",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 34,
+    "ar": "بطانيه روتانا ازرق",
+    "en": "بطانيه روتانا ازرق",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 35,
+    "ar": "مفرش مشجر نيو",
+    "en": "مفرش مشجر نيو",
+    "categoryAr": "مفارش",
+    "categoryEn": "Bedspreads",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 36,
+    "ar": "مفرش ساده نيو",
+    "en": "مفرش ساده نيو",
+    "categoryAr": "مفارش",
+    "categoryEn": "Bedspreads",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 37,
+    "ar": "دفايه برلانت",
+    "en": "دفايه برلانت",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 38,
+    "ar": "بطانيه نيو لندن كيدز",
+    "en": "بطانيه نيو لندن كيدز",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 39,
+    "ar": "بطانيه نيو ستوري",
+    "en": "بطانيه نيو ستوري",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 40,
+    "ar": "دفايه 465",
+    "en": "دفايه 465",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 41,
+    "ar": "حافظه سجاد ايفوريا 2*3",
+    "en": "حافظه سجاد ايفوريا 2*3",
+    "categoryAr": "حافظات سجاد",
+    "categoryEn": "Carpet covers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 42,
+    "ar": "دفايه اوتيفا",
+    "en": "دفايه اوتيفا",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 43,
+    "ar": "بطانيه نيو لندن 4 نجمه",
+    "en": "بطانيه نيو لندن 4 نجمه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 44,
+    "ar": "بطانيه نيو لندن 4 نجمه دبل",
+    "en": "بطانيه نيو لندن 4 نجمه دبل",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 45,
+    "ar": "بطانيه نيو لندن 7 نجمه",
+    "en": "بطانيه نيو لندن 7 نجمه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 46,
+    "ar": "بطانيه نيو لندن 8 نجمه",
+    "en": "بطانيه نيو لندن 8 نجمه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 47,
+    "ar": "حافظه سجاد ايفوريا 2*3 - تعبئه 5",
+    "en": "حافظه سجاد ايفوريا 2*3 - تعبئه 5",
+    "categoryAr": "حافظات سجاد",
+    "categoryEn": "Carpet covers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 48,
+    "ar": "بطانيه نيو لندن 2 نجمه",
+    "en": "بطانيه نيو لندن 2 نجمه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 49,
+    "ar": "بطانيه نيو لندن 3 نجمه دبل",
+    "en": "بطانيه نيو لندن 3 نجمه دبل",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 50,
+    "ar": "بطانيه نيو لندن 5 نجمه",
+    "en": "بطانيه نيو لندن 5 نجمه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 51,
+    "ar": "بطانيه نيو لندن 6 نجمه",
+    "en": "بطانيه نيو لندن 6 نجمه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 52,
+    "ar": "بطانيه موفادا كلاود كسكادا",
+    "en": "بطانيه موفادا كلاود كسكادا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 53,
+    "ar": "بطانيه ويلز",
+    "en": "بطانيه ويلز",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 54,
+    "ar": "بطانيه سيرينا درجه ثانيه",
+    "en": "بطانيه سيرينا درجه ثانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 55,
+    "ar": "بطانيه نيو كمفورت درجه ثانيه",
+    "en": "بطانيه نيو كمفورت درجه ثانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 56,
+    "ar": "دفايه 450",
+    "en": "دفايه 450",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 57,
+    "ar": "دفايه 40-470",
+    "en": "دفايه 40-470",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 58,
+    "ar": "دفايه 40-350",
+    "en": "دفايه 40-350",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 59,
+    "ar": "دفايه 245 - 30",
+    "en": "دفايه 245 - 30",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 60,
+    "ar": "دفايه 245 - 25",
+    "en": "دفايه 245 - 25",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 61,
+    "ar": "بطانيه نيو لافيستا",
+    "en": "بطانيه نيو لافيستا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 62,
+    "ar": "بطانيه نيو لندن 3 نجمه",
+    "en": "بطانيه نيو لندن 3 نجمه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 63,
+    "ar": "بطانيه نيو لندن 9 نجمه",
+    "en": "بطانيه نيو لندن 9 نجمه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 64,
+    "ar": "مفرش اطفال نيو",
+    "en": "مفرش اطفال نيو",
+    "categoryAr": "مفارش",
+    "categoryEn": "Bedspreads",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 65,
+    "ar": "بطانيه نيو سولينا جامبو دبل",
+    "en": "بطانيه نيو سولينا جامبو دبل",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 66,
+    "ar": "دفايه كريستال",
+    "en": "دفايه كريستال",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 67,
+    "ar": "بطانيه سيرينا - 1.7",
+    "en": "بطانيه سيرينا - 1.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 68,
+    "ar": "بطانيه نيو البارون - 25",
+    "en": "بطانيه نيو البارون - 25",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 69,
+    "ar": "باله بطانيه نيو كمفورت - 15",
+    "en": "باله بطانيه نيو كمفورت - 15",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 70,
+    "ar": "بطانيه روتانا دهبي",
+    "en": "بطانيه روتانا دهبي",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 71,
+    "ar": "بطانيه نيو لندن بيبي دبل",
+    "en": "بطانيه نيو لندن بيبي دبل",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 72,
+    "ar": "دفايه باندا - 30",
+    "en": "دفايه باندا - 30",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 73,
+    "ar": "بطانيه مارينا - 1.7",
+    "en": "بطانيه مارينا - 1.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 74,
+    "ar": "بطانيه نيو بيبي",
+    "en": "بطانيه نيو بيبي",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 75,
+    "ar": "بطانيه بدون شريط - 1.3",
+    "en": "بطانيه بدون شريط - 1.3",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 76,
+    "ar": "دفايه هارفي فيلفيت",
+    "en": "دفايه هارفي فيلفيت",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 77,
+    "ar": "دفايه 650",
+    "en": "دفايه 650",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 78,
+    "ar": "دفايه 730",
+    "en": "دفايه 730",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 79,
+    "ar": "دفايه هاي سيندا - تعبئه 40",
+    "en": "دفايه هاي سيندا - تعبئه 40",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 80,
+    "ar": "مفرش اطفال نيو 1 قطعه",
+    "en": "مفرش اطفال نيو 1 قطعه",
+    "categoryAr": "مفارش",
+    "categoryEn": "Bedspreads",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 81,
+    "ar": "بطانيه اطفال نيو 1 قطعه",
+    "en": "بطانيه اطفال نيو 1 قطعه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 82,
+    "ar": "بطانيه بورجادا كلاود",
+    "en": "بطانيه بورجادا كلاود",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 83,
+    "ar": "بطانيه تركي - 2.5",
+    "en": "بطانيه تركي - 2.5",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 84,
+    "ar": "بطانيه نيو روتانا درجه ثانيه - 12",
+    "en": "بطانيه نيو روتانا درجه ثانيه - 12",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 85,
+    "ar": "بطانيه نيو البارون درجه ثانيه",
+    "en": "بطانيه نيو البارون درجه ثانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 86,
+    "ar": "بطانيه تركي - 3.2",
+    "en": "بطانيه تركي - 3.2",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 87,
+    "ar": "بطانيه سيرينا - 2.5",
+    "en": "بطانيه سيرينا - 2.5",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 88,
+    "ar": "بطانيه مادوفا بيرلا",
+    "en": "بطانيه مادوفا بيرلا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 89,
+    "ar": "بطانيه نيو البارون درجه ثانيه باله - 9",
+    "en": "بطانيه نيو البارون درجه ثانيه باله - 9",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 90,
+    "ar": "بطانيه نيو كمفورت دبل",
+    "en": "بطانيه نيو كمفورت دبل",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 91,
+    "ar": "سجاده النور",
+    "en": "سجاده النور",
+    "categoryAr": "سجاد",
+    "categoryEn": "Rugs",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 92,
+    "ar": "خداديه",
+    "en": "خداديه",
+    "categoryAr": "مخدات وخداديات",
+    "categoryEn": "Pillows and cushions",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 93,
+    "ar": "مخده",
+    "en": "مخده",
+    "categoryAr": "مخدات وخداديات",
+    "categoryEn": "Pillows and cushions",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 94,
+    "ar": "سجاده النور درجه ثانيه - 30",
+    "en": "سجاده النور درجه ثانيه - 30",
+    "categoryAr": "سجاد",
+    "categoryEn": "Rugs",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 95,
+    "ar": "بطانيه نيو لندن كيدز دبل",
+    "en": "بطانيه نيو لندن كيدز دبل",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 96,
+    "ar": "بطانيه بنفسج - 1.7",
+    "en": "بطانيه بنفسج - 1.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 97,
+    "ar": "بطانيه بيج - 1.7",
+    "en": "بطانيه بيج - 1.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 98,
+    "ar": "بطانيه بيج - 2.5",
+    "en": "بطانيه بيج - 2.5",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 99,
+    "ar": "بطانيه الشرطه",
+    "en": "بطانيه الشرطه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 100,
+    "ar": "بطانيه تركي - 4.100",
+    "en": "بطانيه تركي - 4.100",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 101,
+    "ar": "دفايه 700",
+    "en": "دفايه 700",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 102,
+    "ar": "بطانيه نيو ريفانا درجه ثانيه",
+    "en": "بطانيه نيو ريفانا درجه ثانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 103,
+    "ar": "بطانيه بدون شريط درجه ثانيه - 1.3",
+    "en": "بطانيه بدون شريط درجه ثانيه - 1.3",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 104,
+    "ar": "بطانيه مادوفا براندو",
+    "en": "بطانيه مادوفا براندو",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 105,
+    "ar": "دفايه 770 بشريط",
+    "en": "دفايه 770 بشريط",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 106,
+    "ar": "مفرش ساده نيو درجه ثانيه",
+    "en": "مفرش ساده نيو درجه ثانيه",
+    "categoryAr": "مفارش",
+    "categoryEn": "Bedspreads",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 107,
+    "ar": "مفرش مشجر نيو درجه ثانيه - 4",
+    "en": "مفرش مشجر نيو درجه ثانيه - 4",
+    "categoryAr": "مفارش",
+    "categoryEn": "Bedspreads",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 108,
+    "ar": "مفرش اطفال نيو درجه ثانيه",
+    "en": "مفرش اطفال نيو درجه ثانيه",
+    "categoryAr": "مفارش",
+    "categoryEn": "Bedspreads",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 109,
+    "ar": "دفايه 510",
+    "en": "دفايه 510",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 110,
+    "ar": "دفايه 520",
+    "en": "دفايه 520",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 111,
+    "ar": "بطانيه نيو بيبي دبل درجه ثانيه - 30",
+    "en": "بطانيه نيو بيبي دبل درجه ثانيه - 30",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 112,
+    "ar": "حافظه سجاد ايفوريا 1*3",
+    "en": "حافظه سجاد ايفوريا 1*3",
+    "categoryAr": "حافظات سجاد",
+    "categoryEn": "Carpet covers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 113,
+    "ar": "دفايه 260",
+    "en": "دفايه 260",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 114,
+    "ar": "بطانيه نيو فيورا",
+    "en": "بطانيه نيو فيورا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 115,
+    "ar": "بطانيه فيورا",
+    "en": "بطانيه فيورا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 116,
+    "ar": "بطانيه نيو البارون دبل - 10",
+    "en": "بطانيه نيو البارون دبل - 10",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 117,
+    "ar": "بطانيه فينتيا",
+    "en": "بطانيه فينتيا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 118,
+    "ar": "بطانيه نيو دريمز دبل",
+    "en": "بطانيه نيو دريمز دبل",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 119,
+    "ar": "بطانيه فيورا ابل",
+    "en": "بطانيه فيورا ابل",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 120,
+    "ar": "دفايه 260 جاكار",
+    "en": "دفايه 260 جاكار",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 121,
+    "ar": "بطانيه بيج - 3.5",
+    "en": "بطانيه بيج - 3.5",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 122,
+    "ar": "بطانيه بريشيا",
+    "en": "بطانيه بريشيا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 123,
+    "ar": "دفايه 560 كريستال",
+    "en": "دفايه 560 كريستال",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 124,
+    "ar": "سجاده النور درجه ثانيه",
+    "en": "سجاده النور درجه ثانيه",
+    "categoryAr": "سجاد",
+    "categoryEn": "Rugs",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 125,
+    "ar": "بطانيه نيو اوليفا رصاصي",
+    "en": "بطانيه نيو اوليفا رصاصي",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 126,
+    "ar": "بطانيه بورجادا كلاود درجه ثانيه",
+    "en": "بطانيه بورجادا كلاود درجه ثانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 127,
+    "ar": "بطانيه روتانا احمر",
+    "en": "بطانيه روتانا احمر",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 128,
+    "ar": "دفايه اينفرنو",
+    "en": "دفايه اينفرنو",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 129,
+    "ar": "دفايه نيو فينيسيا",
+    "en": "دفايه نيو فينيسيا",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 130,
+    "ar": "اتواب حافظه سجاد",
+    "en": "اتواب حافظه سجاد",
+    "categoryAr": "حافظات سجاد",
+    "categoryEn": "Carpet covers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 131,
+    "ar": "بطانيه نيو البارون باله - 9",
+    "en": "بطانيه نيو البارون باله - 9",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 132,
+    "ar": "بطانيه بيج - 3.3",
+    "en": "بطانيه بيج - 3.3",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 133,
+    "ar": "بطانيه ايفوريا بابلز",
+    "en": "بطانيه ايفوريا بابلز",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 134,
+    "ar": "بطانيه موفادا كلاود بافون",
+    "en": "بطانيه موفادا كلاود بافون",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 135,
+    "ar": "بطانيه مادوفا نوفا",
+    "en": "بطانيه مادوفا نوفا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 136,
+    "ar": "بطانيه مادوفا بيرلا دبل",
+    "en": "بطانيه مادوفا بيرلا دبل",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 137,
+    "ar": "بطانيه موفادا بابلز دبل",
+    "en": "بطانيه موفادا بابلز دبل",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 138,
+    "ar": "دفايه لاروز",
+    "en": "دفايه لاروز",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 139,
+    "ar": "بطانيه موفادا بابلز كاليدا",
+    "en": "بطانيه موفادا بابلز كاليدا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 140,
+    "ar": "بطانيه موفادا باليندا",
+    "en": "بطانيه موفادا باليندا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 141,
+    "ar": "بطانيه 2.200 درجه ثانيه",
+    "en": "بطانيه 2.200 درجه ثانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 142,
+    "ar": "بطانيه اطفال 2 طبقه 3ك درجه تانيه",
+    "en": "بطانيه اطفال 2 طبقه 3ك درجه تانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 143,
+    "ar": "بطانيه جولد",
+    "en": "بطانيه جولد",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 144,
+    "ar": "بطانيه بشريط - 1.3 درجه ثانيه",
+    "en": "بطانيه بشريط - 1.3 درجه ثانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 145,
+    "ar": "بطانيه برشلونه 2ك",
+    "en": "بطانيه برشلونه 2ك",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 146,
+    "ar": "بطانيه بشريط - 1.3",
+    "en": "بطانيه بشريط - 1.3",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 147,
+    "ar": "بطانيه برشلونه 2ك درجه ثانيه",
+    "en": "بطانيه برشلونه 2ك درجه ثانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 148,
+    "ar": "مفرش موفادا شبابي درجه تانيه",
+    "en": "مفرش موفادا شبابي درجه تانيه",
+    "categoryAr": "مفارش",
+    "categoryEn": "Bedspreads",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 149,
+    "ar": "دفايه رفال بابلز",
+    "en": "دفايه رفال بابلز",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 150,
+    "ar": "بطانيه بيج - 3.7",
+    "en": "بطانيه بيج - 3.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 151,
+    "ar": "بطانيه نيو اوليفا احمر",
+    "en": "بطانيه نيو اوليفا احمر",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 152,
+    "ar": "بطانيه نيو اوليفا ازرق",
+    "en": "بطانيه نيو اوليفا ازرق",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 153,
+    "ar": "بطانيه باريس 3ك درجه ثانيه - 9",
+    "en": "بطانيه باريس 3ك درجه ثانيه - 9",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 154,
+    "ar": "بطانيه برشلونه 2.200 درجه ثانيه - 9",
+    "en": "بطانيه برشلونه 2.200 درجه ثانيه - 9",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 155,
+    "ar": "بطانيه نيو بيانكا درجه ثانيه",
+    "en": "بطانيه نيو بيانكا درجه ثانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 156,
+    "ar": "بطانيه بيبي درجه ثانيه",
+    "en": "بطانيه بيبي درجه ثانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 157,
+    "ar": "بطانيه نيو لندن 5 نجمه دبل",
+    "en": "بطانيه نيو لندن 5 نجمه دبل",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 158,
+    "ar": "بطانيه نيو روكسانا درجه ثانيه",
+    "en": "بطانيه نيو روكسانا درجه ثانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 159,
+    "ar": "بطانيه نيو بونيتا درجه ثانيه",
+    "en": "بطانيه نيو بونيتا درجه ثانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 160,
+    "ar": "بطانيه نيو بيبي بابلز",
+    "en": "بطانيه نيو بيبي بابلز",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 161,
+    "ar": "بطانيه دهب بيج 3.7",
+    "en": "بطانيه دهب بيج 3.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 162,
+    "ar": "بطانيه دهب كافيه 3.7",
+    "en": "بطانيه دهب كافيه 3.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 163,
+    "ar": "بطانيه دهب كشمير 3.7",
+    "en": "بطانيه دهب كشمير 3.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 164,
+    "ar": "بطانيه موفادا جاسي",
+    "en": "بطانيه موفادا جاسي",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 165,
+    "ar": "بطانيه نيو لورين درجه ثانيه - 6",
+    "en": "بطانيه نيو لورين درجه ثانيه - 6",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 166,
+    "ar": "بطانيه دهب سكري 3.7",
+    "en": "بطانيه دهب سكري 3.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 167,
+    "ar": "بطانيه دهب اسود3.7",
+    "en": "بطانيه دهب اسود3.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 168,
+    "ar": "بطانيه دهب فضي3.7",
+    "en": "بطانيه دهب فضي3.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 169,
+    "ar": "بطانيه دهب رمادي3.7",
+    "en": "بطانيه دهب رمادي3.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 170,
+    "ar": "بطانيه دهب فسدقي3.7",
+    "en": "بطانيه دهب فسدقي3.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 171,
+    "ar": "بطانيه بيج - 2.7",
+    "en": "بطانيه بيج - 2.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 172,
+    "ar": "بطانيه جولدن هوم - 3.5",
+    "en": "بطانيه جولدن هوم - 3.5",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 173,
+    "ar": "بطانيه دهب زيتي3.7",
+    "en": "بطانيه دهب زيتي3.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 174,
+    "ar": "بطانيه دهب كحلي3.7",
+    "en": "بطانيه دهب كحلي3.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 175,
+    "ar": "بطانيه بيج - 5.3",
+    "en": "بطانيه بيج - 5.3",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 176,
+    "ar": "بطانيه دهب فضي 2.7",
+    "en": "بطانيه دهب فضي 2.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 177,
+    "ar": "بطانيه دهب سكري 2.7",
+    "en": "بطانيه دهب سكري 2.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 178,
+    "ar": "بطانيه نيو روتانا خاص تعبئه 12",
+    "en": "بطانيه نيو روتانا خاص تعبئه 12",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 179,
+    "ar": "بطانيه دهب كافيه 2.7",
+    "en": "بطانيه دهب كافيه 2.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 180,
+    "ar": "بطانيه دهب كشمير 2.7",
+    "en": "بطانيه دهب كشمير 2.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 181,
+    "ar": "بطانيه دهب بيج 2.7",
+    "en": "بطانيه دهب بيج 2.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 182,
+    "ar": "بطانيه دهب فسدقي 2.7",
+    "en": "بطانيه دهب فسدقي 2.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 183,
+    "ar": "بطانيه دهب رمادي 2.7",
+    "en": "بطانيه دهب رمادي 2.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 184,
+    "ar": "بطانيه دهب روز بودره 2.7",
+    "en": "بطانيه دهب روز بودره 2.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 185,
+    "ar": "بطانيه دهب زيتي 2.7",
+    "en": "بطانيه دهب زيتي 2.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 186,
+    "ar": "بطانيه دهب اسود 2.7",
+    "en": "بطانيه دهب اسود 2.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 187,
+    "ar": "بطانيه دهب كحلي 2.7",
+    "en": "بطانيه دهب كحلي 2.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 188,
+    "ar": "بطانيه نيو لورين درجه ثانيه",
+    "en": "بطانيه نيو لورين درجه ثانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 189,
+    "ar": "بطانيه موفادا بيبي ساده",
+    "en": "بطانيه موفادا بيبي ساده",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 190,
+    "ar": "بطانيه نيو لافا",
+    "en": "بطانيه نيو لافا",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 191,
+    "ar": "بطانيه بيج دبل - 4",
+    "en": "بطانيه بيج دبل - 4",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 192,
+    "ar": "بطانيه بيج - 4",
+    "en": "بطانيه بيج - 4",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 193,
+    "ar": "بطانيه نيو بيج - 2.5",
+    "en": "بطانيه نيو بيج - 2.5",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 194,
+    "ar": "بطانيه نيو البارون - 2.7",
+    "en": "بطانيه نيو البارون - 2.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 195,
+    "ar": "بطانيه نيو كمفورت دبل - 12",
+    "en": "بطانيه نيو كمفورت دبل - 12",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 196,
+    "ar": "بطانيه نيو كمفورت درجه ثانيه - 12",
+    "en": "بطانيه نيو كمفورت درجه ثانيه - 12",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 197,
+    "ar": "بطانيه نيو لورين - 12",
+    "en": "بطانيه نيو لورين - 12",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 198,
+    "ar": "بطانية بيج 5 ك",
+    "en": "بطانية بيج 5 ك",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 199,
+    "ar": "كمفورت دبل",
+    "en": "كمفورت دبل",
+    "categoryAr": "منتجات أخرى",
+    "categoryEn": "Other products",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 200,
+    "ar": "بطانيه لاروما",
+    "en": "بطانيه لاروما",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 201,
+    "ar": "مفرش جاكار ميراج",
+    "en": "مفرش جاكار ميراج",
+    "categoryAr": "مفارش",
+    "categoryEn": "Bedspreads",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 202,
+    "ar": "بطانيه نيو سولينا جامبو درجه ثانيه - 5",
+    "en": "بطانيه نيو سولينا جامبو درجه ثانيه - 5",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 203,
+    "ar": "بطانيه بيج بابليز- 5",
+    "en": "بطانيه بيج بابليز- 5",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 204,
+    "ar": "بطانيه مادوفا براندو دبل",
+    "en": "بطانيه مادوفا براندو دبل",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 205,
+    "ar": "بطانيه مادوفا نوفا - 6",
+    "en": "بطانيه مادوفا نوفا - 6",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 206,
+    "ar": "بطانيه بيج - 3",
+    "en": "بطانيه بيج - 3",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 207,
+    "ar": "دفايه رفال درجه ثانيه",
+    "en": "دفايه رفال درجه ثانيه",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 208,
+    "ar": "دفايه بابلز - 1.7",
+    "en": "دفايه بابلز - 1.7",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 209,
+    "ar": "بطانيه نيو روتانا درجه ثانيه - 28",
+    "en": "بطانيه نيو روتانا درجه ثانيه - 28",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 210,
+    "ar": "بطانيه نيو البارون درجه ثانيه - 20",
+    "en": "بطانيه نيو البارون درجه ثانيه - 20",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 211,
+    "ar": "بطانيه نيو كمفورت درجه ثانيه - 18",
+    "en": "بطانيه نيو كمفورت درجه ثانيه - 18",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 212,
+    "ar": "بطانيه نيو البارون - 23",
+    "en": "بطانيه نيو البارون - 23",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 213,
+    "ar": "بطانيه نيو البارون - 20",
+    "en": "بطانيه نيو البارون - 20",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 214,
+    "ar": "بطانيه نيو البارون - 22",
+    "en": "بطانيه نيو البارون - 22",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 215,
+    "ar": "بطانيه بيج درجه ثانيه - 2",
+    "en": "بطانيه بيج درجه ثانيه - 2",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 216,
+    "ar": "بطانيه نيو روتانا - 25",
+    "en": "بطانيه نيو روتانا - 25",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 217,
+    "ar": "بطانيه نيو البارون - 24",
+    "en": "بطانيه نيو البارون - 24",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 218,
+    "ar": "بطانيه نيو روتانا تعبئة - 13",
+    "en": "بطانيه نيو روتانا تعبئة - 13",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 219,
+    "ar": "بطانيه مادوفا بيرلا - 8",
+    "en": "بطانيه مادوفا بيرلا - 8",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 220,
+    "ar": "بطانيه العراق - 2.5",
+    "en": "بطانيه العراق - 2.5",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 221,
+    "ar": "بطانيه العراق درجه تانيه - 2.5",
+    "en": "بطانيه العراق درجه تانيه - 2.5",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 222,
+    "ar": "بطانيه بيج بدون شنطه - 2.4",
+    "en": "بطانيه بيج بدون شنطه - 2.4",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 223,
+    "ar": "دفايه كاليدا درجه ثانيه",
+    "en": "دفايه كاليدا درجه ثانيه",
+    "categoryAr": "دفايات",
+    "categoryEn": "Warmers",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 224,
+    "ar": "بطانيه نيو بيبي دبل درجه ثانيه",
+    "en": "بطانيه نيو بيبي دبل درجه ثانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 225,
+    "ar": "بطانيه بيج بدون شنطه - 2.7",
+    "en": "بطانيه بيج بدون شنطه - 2.7",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 226,
+    "ar": "بطانيه نيو كمفورت دبل بدون شنطه",
+    "en": "بطانيه نيو كمفورت دبل بدون شنطه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 227,
+    "ar": "بطانيه نيو كمفورت دبل درجه ثانيه",
+    "en": "بطانيه نيو كمفورت دبل درجه ثانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 228,
+    "ar": "بطانيه نيو لافا درجه ثانيه",
+    "en": "بطانيه نيو لافا درجه ثانيه",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  },
+  {
+    "id": 229,
+    "ar": "بطانيه فينيسيا - 12",
+    "en": "بطانيه فينيسيا - 12",
+    "categoryAr": "بطاطين",
+    "categoryEn": "Blankets",
+    "imageUrl": "assets/images/product-placeholder.svg"
+  }
+]

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NANA SECRET dashboard">
+  <title>NANA SECRET | لوحة التحكم</title>
+  <link rel="icon" href="assets/images/logo.webp" type="image/webp">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="dashboard-body" data-page="dashboard">
+  <main class="dashboard-shell" id="main">
+    <section class="dashboard-layout" data-dashboard>
+      <aside class="dashboard-sidebar">
+        <a class="dashboard-brand" href="admin.html"><img src="assets/images/logo.webp" alt=""><span>NANA SECRET</span></a>
+        <div class="dashboard-user">
+          <span>المستخدم المسجل</span>
+          <strong data-user-name>ADMIN</strong>
+          <small>تم الإنشاء: <b data-user-created>-</b></small>
+          <small>آخر تعديل: <b data-user-updated>-</b></small>
+        </div>
+        <nav class="dashboard-nav" data-dashboard-tabs>
+          <button class="is-active" data-tab="overview">نظرة عامة</button>
+          <button data-tab="navbar">تعديل NAVBAR</button>
+          <button data-tab="home">الصفحة الرئيسية</button>
+          <button data-tab="about">عن الشركة</button>
+          <button data-tab="team">أعضاء الشركة</button>
+          <button data-tab="products">المنتجات</button>
+          <button data-tab="news">الأخبار</button>
+          <button data-tab="contact">التواصل</button>
+          <button data-tab="users">المستخدمين</button>
+        </nav>
+        <div class="dashboard-side-actions">
+          <a class="button secondary" href="index.html" target="_blank" rel="noopener">فتح الموقع في تبويب خارجي</a>
+          <button class="danger-button" type="button" data-logout>تسجيل الخروج</button>
+        </div>
+      </aside>
+
+      <section class="dashboard-main">
+        <header class="dashboard-topbar">
+          <div><p>لوحة التحكم</p><h1 data-panel-title>نظرة عامة</h1></div>
+          <div class="dashboard-message" data-dashboard-message></div>
+        </header>
+
+        <section class="dashboard-panel is-active" data-panel="overview">
+          <div class="dashboard-stats">
+            <article><span>عدد المنتجات</span><strong data-stat-products>0</strong><small>الظاهر: <b data-stat-products-published>0</b></small></article>
+            <article><span>عدد الأخبار</span><strong data-stat-news>0</strong><small>المنشور: <b data-stat-news-published>0</b></small></article>
+            <article><span>عدد المستخدمين</span><strong data-stat-users>0</strong></article>
+            <article><span>عدد صور الاحتفالية</span><strong data-stat-gallery>0</strong><small>الظاهر: <b data-stat-gallery-published>0</b></small></article>
+          </div>
+          <div class="dashboard-card visual-card"><h2>Line Charts</h2><div class="line-charts"><div class="line-chart" data-line-chart><span>المنتجات</span><svg viewBox="0 0 220 90" preserveAspectRatio="none"><polyline data-line-products points="0,80 60,60 120,40 220,20"></polyline></svg></div><div class="line-chart" data-line-chart><span>الأخبار</span><svg viewBox="0 0 220 90" preserveAspectRatio="none"><polyline data-line-news points="0,80 60,60 120,40 220,20"></polyline></svg></div><div class="line-chart" data-line-chart><span>صور الاحتفالية</span><svg viewBox="0 0 220 90" preserveAspectRatio="none"><polyline data-line-gallery points="0,80 60,60 120,40 220,20"></polyline></svg></div></div></div>
+          <details class="dashboard-card users-dropdown"><summary>المستخدمين المسجلين <b data-users-dropdown-count>0</b></summary><div class="users-overview" data-users-overview>جاري التحميل...</div></details>
+        </section>
+
+        <section class="dashboard-panel" data-panel="navbar"><div data-content-editor="navbar"></div></section>
+        <section class="dashboard-panel" data-panel="home"><div data-content-editor="home"></div></section>
+        <section class="dashboard-panel" data-panel="about"><div data-content-editor="about"></div></section>
+        <section class="dashboard-panel" data-panel="team"><div data-content-editor="team"></div></section>
+        <section class="dashboard-panel" data-panel="products"><div data-products-section></div></section>
+        <section class="dashboard-panel" data-panel="news"><div data-news-section></div></section>
+        <section class="dashboard-panel" data-panel="contact"><div data-content-editor="contact"></div></section>
+        <section class="dashboard-panel" data-panel="users"><div data-users-manager></div></section>
+      </section>
+    </section>
+  </main>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
