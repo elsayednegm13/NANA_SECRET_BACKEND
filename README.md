@@ -7,6 +7,14 @@ Bilingual company website with **independent frontend and backend applications**
 
 [دليل التشغيل والنشر بالعربية](README-AR.md) · [تقرير فحص المشروع](docs/PROJECT-ANALYSIS.md)
 
+## Features
+
+- Bilingual (Arabic/English) public company website with product catalog and images.
+- Admin dashboard for managing site content and uploaded media.
+- Contact form delivered by email through Resend.
+- JSON API with SQLite storage and image uploads, deployable independently of the frontend.
+- Locked dependencies for each application and an integration test suite.
+
 ## Quick start
 
 Requires Node.js **22 or newer**, npm and two available ports: **3000** and **4000**.
@@ -22,7 +30,7 @@ npm run dev
 - Dashboard login: http://localhost:3000/login.html
 - API health: http://localhost:4000/api/health
 
-Development bootstrap defaults: `ADMIN` / `123`. These only create a missing administrator; the existing database may already have different credentials. **Do not deploy with the development credentials or secret.**
+The development bootstrap can create an initial administrator from environment configuration, but only if no administrator exists yet; an existing database keeps its own credentials. Set strong `ADMIN_USER` / `ADMIN_PASS` values in `backend/.env` before first run, and **never deploy with development credentials or the default session secret.**
 
 Run separately in two terminals instead:
 
@@ -55,7 +63,7 @@ backend/
   package.json
   package-lock.json
 scripts/dev.js        # Runs the two independent processes locally
- tests/               # Backend integration tests with temporary storage
+tests/                # Backend integration tests with temporary storage
 ```
 
 ## Configuration and independent deployment
